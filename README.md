@@ -4,8 +4,21 @@
 <h1 align="center">
   PARK Visualization
 </h1>
+
 <p align="center">
     <img alt="URMC" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/sponsors.png"/>
+</p>
+
+<p>
+According to the National Institute of Health, over 50,000 people are diagnosed with Parkinson’s each year. Parkinson’s is the fastest-growing neurological disability with symptoms worsening by aging. There is currently no end-to-end pipeline which enables simple, at-home Parkinson’s evaluation. This evaluation involves both diagnosing potential symptoms, and symptom tracking. 
+</p>
+
+<p>
+The ROC HCI lab has an active project called Parkinson’s Analysis with Remote Tasks (PARK), aimed at the early detection of the disease in patients unable to visit a neurologist. 
+</p>
+
+<p>
+Currently, a model analyzes a patient performing various remote tasks such as finger tapping, resting expressions, speech tasks and provides a diagnosis. Our goal is to present this diagnosis in a way that is easily digestible for three target groups: new users, returning users, and clinicians.
 </p>
 
 ## Available Scripts
