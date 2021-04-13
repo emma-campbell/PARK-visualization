@@ -5,9 +5,9 @@
   PARK Visualization
 </h1>
 <p align="center">
-    <img alt="URMC" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/URMCLogo.png" width="60" />
-    <img alt="CHeT" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/CHeTBlacklogo.png" width="60" />
-    <img alt="PARK Visualization" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/ROCHCI.png" width="60" />
+    <img alt="URMC" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/URMCLogo.png" width="100" />
+    <img alt="CHeT" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/CHeTBlacklogo.png" width="100" />
+    <img alt="PARK Visualization" src="https://github.com/emma-campbell/park-visualization/blob/master/assets/ROCHCI.png" width="100" />
 </p>
 
 ## Available Scripts
