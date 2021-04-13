@@ -1,6 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img alt="PARK Visualization" src="https://github.com/emma-campbell/park-visualization/blob/master/PARK.png" width="60" />
+</p>
+<h1 align="center">
+  PARK Visualization
+</h1>
 
 ## Available Scripts
 
