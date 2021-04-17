@@ -1,12 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import '@fontsource/montserrat/700.css';
+import '@fontsource/hind/700.css';
+
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
+
+import Home from "./pages/home"
+import About from "./pages/about"
+import FAQ from "./pages/faq"
+import LogIn from "./pages/login"
+import SignUp from "./pages/signup"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Route exact path="/">
+        <Home/>
+      </Route>
+      <Route exact path="/about">
+        <About/>
+      </Route>
+      <Route exact path="/faq">
+        <FAQ/>
+      </Route>
+      <Route exact path="/log-in">
+        <LogIn/>
+      </Route>
+      <Route exact path="/sign-up">
+        <SignUp/>
+      </Route>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
