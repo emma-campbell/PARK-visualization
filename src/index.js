@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import '@fontsource/montserrat/700.css';
 import '@fontsource/hind/700.css';

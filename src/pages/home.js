@@ -1,13 +1,15 @@
 import Layout from "../components/Layout";
 
-import Hero from "../components/Hero"
+import Hero from "../components/Hero";
+import Sponsors from "../components/Hero/Sponsors";
 
 const Home = () => {
-    return (
-        <Layout>
-            <Hero/>
-        </Layout>
-    )
-}
+  return (
+    <Layout>
+      <Hero />
+      <Sponsors />
+    </Layout>
+  );
+};
 
-export default Home
+export default Home;
