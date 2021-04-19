@@ -7,7 +7,6 @@ const FooterDiv = styled.div`
   display: flex;
   background-color: #333333;
   color: #ffffff;
-  bottom: -35em
 `;
 
 const InformationDiv = styled.div`

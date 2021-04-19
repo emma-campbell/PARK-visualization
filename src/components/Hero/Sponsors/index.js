@@ -7,6 +7,7 @@ import CHET from "../../../images/chet.png";
 import Wave from "../Wave";
 
 const SponsorsDiv = styled.div`
+  width: 100%;
   justify-content: center;
   position: absolute;
   bottom: -25em;
