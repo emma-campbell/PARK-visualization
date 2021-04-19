@@ -20,7 +20,7 @@ const Navigation = styled.div`
 
 const Links = styled.div`
     padding-right: 2em;
-    width: 25%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
 
@@ -33,8 +33,6 @@ const Links = styled.div`
         color: #6F6F6F;
     }
 `
-
-
 
 const NavBar = () => {
     return (

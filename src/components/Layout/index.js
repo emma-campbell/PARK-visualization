@@ -5,6 +5,7 @@ import Footer from "../Footer";
 
 
 const BodyWrapper = styled.body`
+    height: 110vh;
 `
 
 const Layout = ({children}) => {

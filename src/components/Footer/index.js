@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 const FooterDiv = styled.div`
   padding: 2em;
+  position: absolute;
+  width: 100%;
   display: flex;
   background-color: #333333;
   color: #ffffff;
-  bottom: -25em;
+  bottom: -35em
 `;
 
 const InformationDiv = styled.div`
