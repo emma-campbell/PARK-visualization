@@ -16,10 +16,15 @@ const ImageDiv = styled.div`
   padding-left: 2em;
   padding-right: 2em;
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   background-color: #003972;
   align-items: center;
   padding-bottom: 10em;
+
+  & img {
+    width: 300px;
+  }
 `;
 
 const Sponsors = () => {
