@@ -19,7 +19,7 @@ const ImageDiv = styled.div`
   justify-content: space-between;
   background-color: #003972;
   align-items: center;
-  padding-bottom: 4em;
+  padding-bottom: 10em;
 `;
 
 const Sponsors = () => {
