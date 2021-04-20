@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 
-const FAQ = () => {
-    return (
-        <Layout>
-            <h1>FAQ</h1>
-        </Layout>
-    )
-}
+import FAQ from "../components/FAQ";
 
-export default FAQ
+const FAQPage = () => {
+  return (
+    <Layout>
+      <FAQ/>
+    </Layout>
+  );
+};
+
+export default FAQPage;

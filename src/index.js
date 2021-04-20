@@ -12,7 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
 import Home from "./pages/home"
 import AboutPage from "./pages/about"
-import FAQ from "./pages/faq"
+import FAQPage from "./pages/faq"
 import LogIn from "./pages/login"
 import SignUp from "./pages/signup"
 
@@ -26,7 +26,7 @@ ReactDOM.render(
         <AboutPage/>
       </Route>
       <Route exact path="/faq">
-        <FAQ/>
+        <FAQPage/>
       </Route>
       <Route exact path="/log-in">
         <LogIn/>
