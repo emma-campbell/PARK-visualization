@@ -19,6 +19,28 @@ const HeroDiv = styled.div`
     margin: 0;
     color: #ffffff;
   }
+
+  & button {
+    margin-top: 2em;
+    color: #ffffff;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 3em;
+    padding-left: 3em;
+    border: none;
+    border-radius: 40px;
+    background-color: #003972;
+
+    & p {
+      font-size: 2.5em;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  & button:hover {
+    background-color: #002D5A;
+  }
 `;
 
 const TitleDiv = styled.div`
@@ -39,6 +61,7 @@ const Hero = () => {
       <TitleDiv>
         <h1>PARKTest.net</h1>
         <h2>On-Demand Parkinson's Evaluation</h2>
+        <button><p>GET STARTED</p></button>
       </TitleDiv>
     </HeroDiv>
   );
