@@ -12,7 +12,7 @@ const HomeDiv = styled.div`
 const FooterWrapper = styled.div`
   width: 100%;
   position: absolute;
-  bottom: -25em;
+  bottom: -30em;
 `
 
 const Home = () => {

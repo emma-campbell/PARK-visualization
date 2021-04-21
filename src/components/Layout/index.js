@@ -8,6 +8,10 @@ const BodyWrapper = styled.body`
     height: 110vh;
 `
 
+const FooterWrapper = styled.footer`
+    width: 100%;
+`
+
 const Layout = ({children}) => {
     return (
         <BodyWrapper>
@@ -15,9 +19,9 @@ const Layout = ({children}) => {
                 <NavBar/>
             </header>
             {children}
-            <footer>
+            <FooterWrapper>
                 <Footer/>
-            </footer>
+            </FooterWrapper>
         </BodyWrapper>
     )
 }

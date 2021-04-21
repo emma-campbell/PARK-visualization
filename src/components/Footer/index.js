@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 const FooterDiv = styled.div`
   padding: 2em;
-  position: absolute;
-  width: 100%;
+  position: relative;
   display: flex;
   background-color: #333333;
   color: #ffffff;
