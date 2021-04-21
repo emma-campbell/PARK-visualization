@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 
-const SignUp = () => {
-    return (
-        <Layout>
-            <h1>Sign Up</h1>
-        </Layout>
-    )
-}
+import SignUp from "../components/SignUp";
 
-export default SignUp
+const SignUpPage = () => {
+  return (
+    <Layout>
+      <SignUp/>
+    </Layout>
+  );
+};
+
+export default SignUpPage;

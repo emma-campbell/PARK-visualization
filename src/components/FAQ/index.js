@@ -25,11 +25,10 @@ const TextDiv = styled.div`
 const FAQ = () => {
   return (
     <FAQDiv>
-        <TextDiv>
-            <h1>FAQ</h1>
-            <p>Click on the question below to view the answer.</p>
-        </TextDiv>
-        {/* INSERT ACCORDION */}
+      <TextDiv>
+        <h1>FAQ</h1>
+        <p>Click on the question below to view the answer.</p>
+      </TextDiv>
     </FAQDiv>
   );
 };

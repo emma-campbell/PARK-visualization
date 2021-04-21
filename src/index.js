@@ -14,7 +14,7 @@ import Home from "./pages/home"
 import AboutPage from "./pages/about"
 import FAQPage from "./pages/faq"
 import LogIn from "./pages/login"
-import SignUp from "./pages/signup"
+import SignUpPage from "./pages/signup"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -32,7 +32,7 @@ ReactDOM.render(
         <LogIn/>
       </Route>
       <Route exact path="/sign-up">
-        <SignUp/>
+        <SignUpPage/>
       </Route>
     </BrowserRouter>
   </React.StrictMode>,
