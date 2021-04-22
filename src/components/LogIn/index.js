@@ -3,7 +3,6 @@ import styled from "styled-components";
 const LogInDiv = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: #003972;
   color: #ffffff;
 `;
@@ -24,21 +23,22 @@ const TextDiv = styled.div`
 
 const Content = styled.div`
   display: flex;
+  height: 70vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 const Card = styled.div`
-  margin-top: 3em;
   display: flex;
   justify-items: center;
   align-items: center;
   width: 55%;
-  height: 65vh;
+  height: 55vh;
   border-radius: 6px;
   background-color: #ffffff;
   color: #000000;
+  box-shadow: 5px 1px 12px rgba(0, 0, 0, 0.5);
 `;
 
 const CardContent = styled.div`
@@ -88,7 +88,8 @@ const CardContent = styled.div`
   }
 `;
 
-const Field = styled.div`  
+const Field = styled.div`
+  padding-bottom: 2em;  
   display: flex;
   text-align: left;
   width: 100%;
@@ -102,6 +103,7 @@ const Field = styled.div`
   & input {
     font-family: 'Hind', sans-serif;
     font-size: 1.5em;
+    padding-left: 0.5em;
     height: 3em;
     border-radius: 2px;
   }
@@ -112,20 +114,26 @@ const Field = styled.div`
 `;
 
 const CheckBoxField = styled.div`
-  
   display: flex;
   justify-items: center;
   align-items: center;
+  
   & input {
+    padding: 0;
+    margin: 0;
       height: 2em;
       width: 2em;
   }
+  
   & label {
       padding: 0;
       margin: 0;
   }
+  
   & p {
-      padding: 1em;
+      padding: 0;
+      margin: 0;
+      padding-left: 1em;
   }
 `;
 
