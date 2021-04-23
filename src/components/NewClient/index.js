@@ -17,14 +17,18 @@ const NewClientDiv = styled.div`
 const LogoBar = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em;
   align-items: center;
-  width: 100%;
-
   & img {
     padding: 0.5em;
-    padding-left: 2em;
     width: 4em;
     height: 4em;
+  }
+
+  & h1 {
+    padding: 0;
+    margin: 0;
   }
 `;
 
@@ -72,10 +76,11 @@ const NewClient = () => {
         <Link to="/">
           <img src={PARK} alt="PARK" />
         </Link>
+        <h1>Your results are in...</h1>
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence />
+          <Confidence score="5" confidence="78" />
           <ShareResults />
         </SideBar>
         <Data>
