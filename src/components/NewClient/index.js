@@ -85,7 +85,7 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <Speech />
+            <Speech score="3"/>
             <Face />
           </Scores>
           <Graph>

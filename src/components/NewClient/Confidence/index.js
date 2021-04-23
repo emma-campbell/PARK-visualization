@@ -19,6 +19,7 @@ const ConfidenceDiv = styled.div`
   }
 
   & h1 {
+    margin-top: 0;
     padding-top: 1em;
     margin-bottom: 0;
   }
@@ -29,6 +30,7 @@ const FeedbackText = styled.div`
   padding-right: 1em;
   text-align: center;
   & p {
+    margin: 0;
     font-size: 2em;
     color: #9a9a9a;
   }
