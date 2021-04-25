@@ -29,10 +29,21 @@ const FeedbackText = styled.div`
   padding-left: 1em;
   padding-right: 1em;
   text-align: center;
-  & p {
-    margin: 0;
-    font-size: 2em;
-    color: #9a9a9a;
+
+  @media only screen and (min-width: 1200px) {
+    & p {
+      margin-top: 1em;
+      font-size: 1.5em;
+      color: #9a9a9a;
+    }
+  }
+
+  @media only screen and (min-width : 1824px) {
+    & p {
+      margin: 0;
+      font-size: 2em;
+      color: #9a9a9a;
+    }
   }
 `;
 
@@ -49,11 +60,11 @@ const Confidence = ({ score, confidence }) => {
   } else if (score === "3") {
     feedback =
       "You are displaying mild symptoms. It may be time to consult with a neurologist.";
-      img = Score3;
+    img = Score3;
   } else if (score === "2") {
     feedback =
       "You are displaying minimal symptoms. Please continue to track your symptoms.";
-      img = Score2;
+    img = Score2;
   } else {
     feedback = "";
     img = Score1;

@@ -12,14 +12,14 @@ const ShareDiv = styled.div`
 
   & h2 {
     margin: 0;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
   }
 `;
 
 const Buttons = styled.div`
   display: grid;
   grid-template-rows: 50% 50%;
-  gap: 20px;
+  gap: 5px;
   & button {
     padding: 0;
     padding-top: 1em;

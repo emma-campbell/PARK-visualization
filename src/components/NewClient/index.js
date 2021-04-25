@@ -43,7 +43,7 @@ const SideBar = styled.div`
   padding-bottom: 1em;
   display: grid;
   grid-template-rows: 55vh 25vh;
-  gap: 15px;
+  gap: 20px;
   width: 45%;
 `;
 
@@ -86,7 +86,7 @@ const NewClient = () => {
         <Data>
           <Scores>
             <Speech score="3"/>
-            <Face />
+            <Face score="2"/>
           </Scores>
           <Graph>
             <h2>GRAPH</h2>

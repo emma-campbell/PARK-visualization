@@ -17,6 +17,7 @@ const SpeechDiv = styled.div`
   & h2 {
     margin-bottom: 5px;
   }
+  
   & p {
     margin-top: 0;
     color: #878787;
