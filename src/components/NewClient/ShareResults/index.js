@@ -33,6 +33,9 @@ const Buttons = styled.div`
       font-size: 2em;
     }
   }
+  & button:hover {
+    background-color: #D7D7D7;
+  }
 `;
 
 const ShareResults = () => {

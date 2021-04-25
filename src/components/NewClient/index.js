@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+// RECHART
+import {
+  BarChart,
+  CartesianAxis,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Bar,
+} from "recharts";
+
 // LOGO
 import PARK from "../../images/PARK.png";
 
@@ -64,12 +75,17 @@ const Scores = styled.div`
 `;
 
 const Graph = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 45vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
 
 const NewClient = () => {
+  var data = [{ name: "Page A", uv: 400, pv: 2400, amt: 2400 }];
+
   return (
     <NewClientDiv>
       <LogoBar>
@@ -85,11 +101,18 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <Speech score="3"/>
-            <Face score="2"/>
+            <Speech score="3" />
+            <Face score="2" />
           </Scores>
           <Graph>
-            <h2>GRAPH</h2>
+            <BarChart width={730} height={250} data={data}>
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="pv" fill="#003972" />
+              <Bar dataKey="uv" fill="#003972" />
+            </BarChart>
           </Graph>
         </Data>
       </Content>
