@@ -116,7 +116,7 @@ const SignUp = () => {
                 fill="black"
               />
             </svg>
-            <p>Track your symptoms and diagnostic data over time.</p>
+            <p>Track your diagnostic data over time.</p>
             <button><p>I am a Patient</p></button>
           </CardContent>
           <Divider/>
