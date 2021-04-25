@@ -23,7 +23,7 @@ const TextDiv = styled.div`
 
 const Content = styled.div`
   display: flex;
-  height: 70vh;
+  height: 75vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ const Card = styled.div`
   justify-items: center;
   align-items: center;
   width: 55%;
-  height: 55vh;
+  height: 65vh;
   border-radius: 6px;
   background-color: #ffffff;
   color: #000000;
