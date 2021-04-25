@@ -30,12 +30,12 @@ const Content = styled.div`
 `;
 
 const Card = styled.div`
-  margin-top: 3em;
+  margin-top: 2em;
   display: flex;
   justify-items: center;
   align-items: center;
   width: 80%;
-  height: 65vh;
+  height: 75vh;
   border-radius: 6px;
   background-color: #ffffff;
   color: #000000;
