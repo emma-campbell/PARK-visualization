@@ -3,6 +3,8 @@ import styled from "styled-components";
 import ProgressBar from "../ProgressBar";
 
 const FaceDiv = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 1em;
   height: 30vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
