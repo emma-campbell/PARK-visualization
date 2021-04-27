@@ -14,6 +14,7 @@ const ConfidenceDiv = styled.div`
   align-items: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
   & img {
     width: 65%;
   }
@@ -21,28 +22,33 @@ const ConfidenceDiv = styled.div`
   & h1 {
     margin-top: 0;
     padding-top: 1em;
-    margin-bottom: 0;
+    font-size: 1.75em;
+  }
+
+  @media only screen and (min-width: 1250px) {
+    & h1 {
+      font-size: 2em;
+    }
   }
 `;
 
 const FeedbackText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-left: 1em;
   padding-right: 1em;
   text-align: center;
 
-  @media only screen and (min-width: 1200px) {
-    & p {
-      margin-top: 1em;
-      font-size: 1.5em;
-      color: #9a9a9a;
-    }
+  & p {
+    color: #9a9a9a;
+    font-size: 1.5em;
   }
 
-  @media only screen and (min-width : 1824px) {
+  @media only screen and (min-width: 1250px) {
     & p {
       margin: 0;
       font-size: 2em;
-      color: #9a9a9a;
     }
   }
 `;
