@@ -14,16 +14,19 @@ const ShareDiv = styled.div`
     margin: 0;
     padding-bottom: 0.25em;
   }
+
+  
 `;
 
 const Buttons = styled.div`
-  display: grid;
-  grid-template-rows: 50% 50%;
-  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+
   & button {
+    margin: 1em;
     padding: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
     background-color: #ffffff;
     border: none;
     border-radius: 30px;
@@ -35,6 +38,13 @@ const Buttons = styled.div`
   }
   & button:hover {
     background-color: #D7D7D7;
+  }
+
+  @media only screen and (min-width: 1250px) {
+    & button {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
   }
 `;
 
