@@ -18,8 +18,7 @@ import PARK from "../../images/PARK.png";
 
 // Sub-Components
 import Confidence from "./Confidence";
-import Speech from "./Speech";
-import Face from "./Face";
+import SubScore from "./SubScore";
 import ShareResults from "./ShareResults";
 
 const NewClientDiv = styled.div`
@@ -68,11 +67,9 @@ const Data = styled.div`
 `;
 
 const Scores = styled.div`
-  display: grid;
-  grid-template-columns: 49% 49%;
-  gap: 15px;
+  display: flex;
   width: 100%;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
 `;
 
 const Graph = styled.div`
@@ -145,8 +142,7 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <Speech score="3" />
-            <Face score="4" />
+            <SubScore />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
