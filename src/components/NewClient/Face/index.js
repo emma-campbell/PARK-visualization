@@ -49,13 +49,13 @@ const RightAlignedButtonDiv = styled.div`
 const Face = ({score}) => {
   var percent;
 
-  if (score === "5") {
+  if (score === "4") {
     percent = 100;
-  } else if (score === "4") {
-    percent = 75;
   } else if (score === "3") {
-    percent = 50;
+    percent = 75;
   } else if (score === "2") {
+    percent = 50;
+  } else if (score === "1") {
     percent = 25;
   } else {
     percent = 0;

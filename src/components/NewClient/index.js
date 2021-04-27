@@ -140,13 +140,13 @@ const NewClient = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence score="5" confidence="78" />
+          <Confidence score="3" confidence="78" />
           <ShareResults />
         </SideBar>
         <Data>
           <Scores>
             <Speech score="3" />
-            <Face score="2" />
+            <Face score="4" />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">

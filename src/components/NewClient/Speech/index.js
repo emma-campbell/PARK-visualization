@@ -3,6 +3,8 @@ import styled from "styled-components";
 import ProgressBar from "../ProgressBar";
 
 const SpeechDiv = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 1em;
   height: 30vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -49,13 +51,13 @@ const RightAlignedButtonDiv = styled.div`
 const Speech = ({score}) => {
   var percent;
 
-  if (score === "5") {
+  if (score === "4") {
     percent = 100;
-  } else if (score === "4") {
-    percent = 75;
   } else if (score === "3") {
-    percent = 50;
+    percent = 75;
   } else if (score === "2") {
+    percent = 50;
+  } else if (score === "1") {
     percent = 25;
   } else {
     percent = 0;
