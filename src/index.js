@@ -19,6 +19,7 @@ import SignUpPage from "./pages/signup";
 
 // Feedback Pages
 import NewClientPage from "./pages/newclients";
+import ReturningClientsPage from "./pages/returningclients";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -40,6 +41,9 @@ ReactDOM.render(
       </Route>
       <Route path="/feedback/new-client">
         <NewClientPage />
+      </Route>
+      <Route path="/feedback/returning-client">
+        <ReturningClientsPage />
       </Route>
     </BrowserRouter>
   </React.StrictMode>,
