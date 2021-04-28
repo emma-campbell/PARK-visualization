@@ -1,3 +1,5 @@
+import { render } from "@testing-library/react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import ProgressBar from "../ProgressBar";
@@ -62,58 +64,81 @@ const ArrowDiv = styled.div`
   }
 `;
 
-function rightClick() {
-  console.log("RIGHT CLICK");
-  if (state.category === "MOTOR") {
-    state.category = "FACE";
-    state.score = faceScore;
-  }
-  if (state.category === "FACE") {
-    state.category = "SPEECH";
-    state.score = speechScore;
-  }
-  if (state.category === "SPEECH") {
-    state.category = "MOTOR";
-    state.score = motorScore;
-  }
-}
-
-function leftClick() {
-  console.log("LEFT CLICK");
-  if (state.category === "MOTOR") {
-    state.category = "SPEECH";
-    state.score = speechScore;
-  }
-  if (state.category === "FACE") {
-    state.category = "MOTOR";
-    state.score = motorScore;
-  }
-  if (state.category === "SPEECH") {
-    state.category = "FACE";
-    state.score = faceScore;
-  }
-}
-
 const SubScore = ({ faceScore, speechScore, motorScore }) => {
-  const state = {
-    category: "MOTOR",
-    score: motorScore,
-  };
+  const [category, setCategory] = useState("MOTOR");
+  const [task, setTask] = useState("4");
+  const [score, setScore] = useState(motorScore);
+
+  const [percent, setPercent] = useState("0");
+
+  function calcPercent() {
+    if (score === "4") {
+      setPercent("100");
+    } else if (score === "3") {
+      setPercent("75");
+    } else if (score === "2") {
+      setPercent("50");
+    } else if (score === "1") {
+      setPercent("25");
+    } else {
+      setPercent("0");
+    }
+  }
+
+  function rightClick() {
+    if (category === "MOTOR") {
+      setCategory("FACE");
+      setTask("1 and 2");
+      setScore(faceScore);
+    }
+    if (category === "FACE") {
+      setCategory("SPEECH");
+      setTask("3");
+      setScore(speechScore);
+    }
+    if (category === "SPEECH") {
+      setCategory("MOTOR");
+      setTask("4");
+      setScore(motorScore);
+    }
+  }
+
+  function leftClick() {
+    if (category === "MOTOR") {
+      setCategory("SPEECH");
+      setTask("3");
+      setScore(speechScore);
+    }
+    if (category === "FACE") {
+      setCategory("MOTOR");
+      setTask("4");
+      setScore(motorScore);
+    }
+    if (category === "SPEECH") {
+      setCategory("FACE");
+      setTask("1 and 2");
+      setScore(faceScore);
+    }
+  }
+
+  useEffect(() => {
+      calcPercent();
+  })
 
   return (
     <SubScoreDiv>
-      <h1>{state.category}</h1>
-      <p>Task 4</p>
-      <h2>SCORE | {state.score}</h2>
-      <ProgressBar completed="70" />
+      <h1>{category}</h1>
+      <p>Task {task}</p>
+      <h2>SCORE | {score}</h2>
+      <ProgressBar completed={percent} />
       <RightAlignedButtonDiv>
         <button>
           <p>EXPLAIN MY SCORE</p>
         </button>
       </RightAlignedButtonDiv>
       <ArrowDiv>
-        <LeftArrow onClick={leftClick()} />
-        <RightArrow onClick={rightClick()} />
+        <LeftArrow onClick={leftClick} />
+        <RightArrow onClick={rightClick} />
       </ArrowDiv>
     </SubScoreDiv>
   );

@@ -142,7 +142,7 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <SubScore />
+            <SubScore faceScore="3" speechScore="4" motorScore="3"/>
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
