@@ -20,6 +20,7 @@ import PARK from "../../images/PARK.png";
 import Confidence from "./Confidence";
 import SubScore from "./SubScore";
 import ShareResults from "./ShareResults";
+import Modal from "../Modal";
 
 const NewClientDiv = styled.div`
   height: 100vh;
@@ -82,6 +83,7 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
+  
   const categories = ["Jitter", "Shimmer", "Pitch"];
 
   var data = [
@@ -131,6 +133,7 @@ const NewClient = () => {
 
   return (
     <NewClientDiv>
+      <Modal categories={categories} show="true"/>
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
