@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import ProgressBar from "../ProgressBar";
-import LeftArrow from "./LeftArrow";
-import RightArrow from "./RightArrow";
+import ProgressBar from "../../NewClient/ProgressBar";
+import LeftArrow from "../../NewClient/SubScore/LeftArrow";
+import RightArrow from "../../NewClient/SubScore/RightArrow";
 
 const SubScoreDiv = styled.div`
   padding: 1em;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
@@ -32,7 +32,7 @@ const SubScoreDiv = styled.div`
 
 const RightAlignedButtonDiv = styled.div`
   display: flex;
-  padding-top: 1em;
+  padding-top: 2em;
   justify-content: flex-end;
 
   & button {
@@ -121,20 +121,24 @@ const SubScore = ({ faceScore, speechScore, motorScore }) => {
   }
 
   useEffect(() => {
-      calcPercent();
-  })
+    calcPercent();
+  });
 
   return (
     <SubScoreDiv>
-      <h1>{category}</h1>
-      <p>Task {task}</p>
-      <h2>SCORE | {score}</h2>
-      <ProgressBar completed={percent} />
-      <RightAlignedButtonDiv>
-        <button>
-          <p>EXPLAIN MY SCORE</p>
-        </button>
-      </RightAlignedButtonDiv>
+      <div>
+        <h1>{category}</h1>
+        <p>Task {task}</p>
+      </div>
+      <div>
+        <h2>SCORE | {score}</h2>
+        <ProgressBar completed={percent} />
+        <RightAlignedButtonDiv>
+            <button>
+            <p>EXPLAIN MY SCORE</p>
+            </button>
+        </RightAlignedButtonDiv>
+      </div>
       <ArrowDiv>
         <LeftArrow onClick={leftClick} />
         <RightArrow onClick={rightClick} />
