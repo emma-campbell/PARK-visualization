@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
   Bar,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from "recharts";
 
 // LOGO
@@ -82,6 +82,8 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
+  const categories = ["Jitter", "Shimmer", "Pitch"];
+
   var data = [
     {
       name: "Page A",
@@ -142,16 +144,16 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <SubScore faceScore="3" speechScore="4" motorScore="3"/>
+            <SubScore faceScore="3" speechScore="4" motorScore="3" />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
-              <BarChart fontFamily={'Hind, sans-serif'} data={data}>
+              <BarChart fontFamily={"Hind, sans-serif"} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
-                <Tooltip wrapperStyle={{fontFamily: 'Hind, san-serif'}}/>
-                <Legend wrapperStyle={{fontFamily: 'Hind, san-serif'}}/>
+                <Tooltip wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
+                <Legend wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
                 <Bar dataKey="pv" fill="#003972" />
                 <Bar dataKey="uv" fill="#003972" />
               </BarChart>
