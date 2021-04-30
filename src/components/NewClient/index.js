@@ -88,7 +88,6 @@ const Graph = styled.div`
 
 const NewClient = () => {
   
-  const categories = ["Jitter", "Shimmer", "Pitch"];
   const [modalShow, setModalShow] = React.useState(false);
   var data = [
     {
@@ -141,10 +140,6 @@ const NewClient = () => {
 
   return (
     <NewClientDiv>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
       <Modal
         open={modalShow}
         onClose={() => setModalShow(false)}
@@ -167,7 +162,7 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <SubScore faceScore="3" speechScore="4" motorScore="3" />
+            <SubScore faceScore="3" speechScore="4" motorScore="3" setModalShow={setModalShow} />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
