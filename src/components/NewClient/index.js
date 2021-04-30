@@ -1,5 +1,5 @@
-import React from 'react';
-import {Modal, Button} from '@material-ui/core';
+import React from "react";
+import { Modal } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -87,7 +87,6 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
-  
   const [modalShow, setModalShow] = React.useState(false);
   var data = [
     {
@@ -134,9 +133,7 @@ const NewClient = () => {
     },
   ];
 
-  const body = (
-    <ModalData />
-  );
+  const body = <ModalData />;
 
   return (
     <NewClientDiv>
@@ -148,7 +145,7 @@ const NewClient = () => {
       >
         {body}
       </Modal>
-      
+
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
@@ -162,7 +159,12 @@ const NewClient = () => {
         </SideBar>
         <Data>
           <Scores>
-            <SubScore faceScore="3" speechScore="4" motorScore="3" setModalShow={setModalShow} />
+            <SubScore
+              faceScore="3"
+              speechScore="4"
+              motorScore="3"
+              setModalShow={setModalShow}
+            />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
