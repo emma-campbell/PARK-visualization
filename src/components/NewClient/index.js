@@ -1,3 +1,5 @@
+import React from 'react';
+import {Modal, Button} from '@material-ui/core';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -20,10 +22,12 @@ import PARK from "../../images/PARK.png";
 import Confidence from "./Confidence";
 import SubScore from "./SubScore";
 import ShareResults from "./ShareResults";
-import Modal from "../Modal";
+import ModalData from "../ModalData";
 
 const NewClientDiv = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 const LogoBar = styled.div`
@@ -85,7 +89,7 @@ const Graph = styled.div`
 const NewClient = () => {
   
   const categories = ["Jitter", "Shimmer", "Pitch"];
-
+  const [modalShow, setModalShow] = React.useState(false);
   var data = [
     {
       name: "Page A",
@@ -131,9 +135,25 @@ const NewClient = () => {
     },
   ];
 
+  const body = (
+    <ModalData />
+  );
+
   return (
     <NewClientDiv>
-      <Modal categories={categories} show="true"/>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Launch vertically centered modal
+      </Button>
+
+      <Modal
+        open={modalShow}
+        onClose={() => setModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+      
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
