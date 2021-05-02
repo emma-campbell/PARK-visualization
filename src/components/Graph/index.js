@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import moment from "moment";
 import { Button } from "@material-ui/core";
+
 import {
   LineChart,
   Line,
@@ -39,7 +40,10 @@ const GraphContainer = styled.div`
 const ButtonDiv = styled.div`
   display: flex;
   width: 100%;
-  margin-left: 15%;
+  margin-left: 10%;
+  & button {
+    margin-left: 1em;
+  }
   & button p {
     padding: 0;
   }
