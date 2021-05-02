@@ -172,7 +172,7 @@ const NewClient = () => {
             <SubScore
               faceScore="3"
               speechScore="4"
-              motorScore="3"
+              motorScore="2"
               setModalShow={setModalShow}
             />
           </Scores>
