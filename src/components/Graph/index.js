@@ -48,9 +48,11 @@ const ButtonDiv = styled.div`
   display: flex;
   width: 100%;
   margin-left: 10%;
+  
   & button {
     margin-left: 1em;
   }
+
   & button p {
     padding: 0;
   }
@@ -226,7 +228,7 @@ const Graph = () => {
             paddingBottom: "0",
             backgroundColor: motorShow ? "#003972" : "#999393",
             color: "white",
-            borderRadius: "0",
+            borderRadius: "22px",
           }}
           onClick={() => {
             setMotorShow(!motorShow);
@@ -244,7 +246,9 @@ const Graph = () => {
             color: "white",
             paddingTop: "0",
             paddingBottom: "0",
-            borderRadius: "0",
+            paddingRight: "2em",
+            paddingLeft: "2em",
+            borderRadius: "22px",
           }}
           onClick={() => {
             setFaceShow(!faceShow);
@@ -262,7 +266,7 @@ const Graph = () => {
             paddingBottom: "0",
             backgroundColor: speechShow ? "#003972" : "#999393",
             color: "white",
-            borderRadius: "0",
+            borderRadius: "22px",
           }}
           onClick={() => {
             setSpeechShow(!speechShow);
@@ -281,6 +285,7 @@ const Graph = () => {
             backgroundColor: overallShow ? "#003972" : "#999393",
             color: "white",
             borderRadius: "0",
+            borderRadius: "22px",
           }}
           onClick={() => {
             setOverallShow(!overallShow);
