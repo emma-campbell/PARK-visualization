@@ -186,7 +186,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const CustomizedDot = (props) => {
-  const { cx, cy, stroke, payload } = props;
+  const { cx, cy, payload } = props;
   console.log(payload);
   if (payload.z === 0) {
     return (
