@@ -17,9 +17,12 @@ import FAQPage from "./pages/faq";
 import LogIn from "./pages/login";
 import SignUpPage from "./pages/signup";
 
+
 // Feedback Pages
 import NewClientPage from "./pages/newclients";
 import ReturningClientsPage from "./pages/returningclients";
+import CliniciansPage from "./pages/clinicians";
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -44,6 +47,9 @@ ReactDOM.render(
       </Route>
       <Route path="/feedback/returning-client">
         <ReturningClientsPage />
+      </Route>
+      <Route path="/clinicians">
+        <CliniciansPage />
       </Route>
     </BrowserRouter>
   </React.StrictMode>,
