@@ -37,6 +37,13 @@ const GraphContainer = styled.div`
   }
 `;
 
+const DateDiv = styled.div`
+  width: 100%;
+  margin-left: 12%;
+  text-align: left;
+  display: flex;
+`;
+
 const ButtonDiv = styled.div`
   display: flex;
   width: 100%;
@@ -206,6 +213,9 @@ const Graph = () => {
 
   return (
     <GraphContainer>
+      <DateDiv>
+        <h1>{moment(new Date(test_time)).format("MMMM DD, YYYY")}</h1>
+      </DateDiv>
       <ButtonDiv>
         <Button
           variant="contained"

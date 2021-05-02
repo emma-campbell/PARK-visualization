@@ -74,7 +74,6 @@ const ReturningClients = () => {
       scores={scores}
     />
   );
-
   
   return (
     <ReturningClientDiv>
@@ -95,7 +94,7 @@ const ReturningClients = () => {
       <Content>
         <SideBar>
           <FillerDiv>CONFIDENCE</FillerDiv>
-          <SubScore faceScore="2" speechScore="3" motorScore="4" setModalShow={setModalShow}/>
+          <SubScore faceScore="2" speechScore="0" motorScore="1" setModalShow={setModalShow}/>
         </SideBar>
         <Graph/>
       </Content>

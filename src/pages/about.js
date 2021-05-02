@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 
-import Graph from "../components/Graph";
+import About from "../components/About";
 
 const AboutPage = () => {
   return (
     <Layout>
-      <Graph />
+      <About />
     </Layout>
   );
 };
