@@ -149,7 +149,7 @@ const data = [
   },
 ];
 
-const test_date = "2015-08-17 14:24:36";
+const test_date = "2021-06-25 14:24:36";
 const test_time = new Date(test_date).getTime();
 
 const xTickFormatter = (date) => {
@@ -184,7 +184,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const CustomizedDot = (props) => {
-  const { cx, cy, stroke, payload, value } = props;
+  const { cx, cy, stroke, payload } = props;
   console.log(payload);
   if (payload.z == 0) {
     return (
