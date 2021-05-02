@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 // STYLED COMPONENTS
 import styled from "styled-components";
 
+// MODAL
 import { Modal } from "@material-ui/core";
 import ModalData from "../ModalData";
+
+// GRAPH
+import Graph from "../Graph";
 
 // LOGO
 import PARK from "../../images/PARK.png";
@@ -93,6 +97,7 @@ const ReturningClients = () => {
           <FillerDiv>CONFIDENCE</FillerDiv>
           <SubScore faceScore="2" speechScore="3" motorScore="4" setModalShow={setModalShow}/>
         </SideBar>
+        <Graph/>
       </Content>
     </ReturningClientDiv>
   );
