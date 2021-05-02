@@ -67,7 +67,7 @@ const ReturningClients = () => {
   
   const categories = ["Jitter", "Shimmer", "Pitch"];
   const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
-  const scores = [80, 95, 70];
+  const scores = [45, 95, 70];
   const body = (
     <ModalData
       categories={categories}

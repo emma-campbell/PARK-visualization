@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-import ProgressBar from "../ProgressBar";
+// import ProgressBar from "../ProgressBar";
+import BidirectionalProgressBar from "../BidirectionalProgressBar";
 
 const ModalDiv = styled.div`
   border-radius: 9px;
   margin-top: 15%;
-  margin-left: 20%;
-  padding-left: 4em;
-  padding-right: 4em;
+  margin-left: 25%;
+  padding-left: 2em;
+  padding-right: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
   background-color: white;
   width: 50%;
-  height: 55%;
+  height: 50%;
 
   & h2 {
     margin: 0;
@@ -21,6 +22,8 @@ const ModalDiv = styled.div`
 
   & p {
     margin: 0;
+    font-size: 14px;
+    color: #999999;
   }
 `;
 
@@ -28,9 +31,6 @@ const ProgressDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  & h1 {
-    padding-left: 1em;
-  }
 `;
 
 const Disclaimer = styled.div`
@@ -51,19 +51,22 @@ const ModalData = ({ categories, descriptions, scores }) => {
       <h2>{categories[0]}</h2>
       <p>{descriptions[0]}</p>
       <ProgressDiv>
-        <ProgressBar completed={scores[0]} />
+        <h1>{100-parseInt(scores[0])}%</h1>
+        <BidirectionalProgressBar width="75" completed={scores[0]} direction={ 100 - scores[0] > scores[0]}/>
         <h1>{scores[0]}%</h1>
       </ProgressDiv>
       <h2>{categories[1]}</h2>
       <p>{descriptions[1]}</p>
       <ProgressDiv>
-        <ProgressBar completed={scores[1]} />
+        <h1>{100-parseInt(scores[1])}%</h1>
+        <BidirectionalProgressBar width="75" completed={scores[1]} direction={ 100 - scores[1] > scores[1]}/>
         <h1>{scores[1]}%</h1>
       </ProgressDiv>
       <h2>{categories[2]}</h2>
       <p>{descriptions[2]}</p>
       <ProgressDiv>
-        <ProgressBar completed={scores[2]} />
+        <h1>{100-parseInt(scores[2])}%</h1>
+        <BidirectionalProgressBar width="75" completed={scores[2]} direction={ 100 - scores[2] > scores[2]} />
         <h1>{scores[2]}%</h1>
       </ProgressDiv>
       <Disclaimer>
