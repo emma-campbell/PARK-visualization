@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 // STYLED COMPONENTS
 import styled from "styled-components";
 
+// MODAL
 import { Modal } from "@material-ui/core";
 import ModalData from "../ModalData";
+
+// GRAPH
+import Graph from "../Graph";
 
 // LOGO
 import PARK from "../../images/PARK.png";
 
 // COMPONENTS
 import SubScore from "./SubScore";
+import Confidence from "./Confidence";
 
 const ReturningClientDiv = styled.div`
   height: 100vh;
@@ -50,11 +55,11 @@ const SideBar = styled.div`
   width: 35%;
 `;
 
-const FillerDiv = styled.div`
-  padding: 1em;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-`;
+// const FillerDiv = styled.div`
+//   padding: 1em;
+//   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+//     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+// `;
 
 const ReturningClients = () => {
 
@@ -70,7 +75,6 @@ const ReturningClients = () => {
       scores={scores}
     />
   );
-
   
   return (
     <ReturningClientDiv>
@@ -90,9 +94,10 @@ const ReturningClients = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <FillerDiv>CONFIDENCE</FillerDiv>
-          <SubScore faceScore="2" speechScore="3" motorScore="4" setModalShow={setModalShow}/>
+          <Confidence score="1" confidence="78"/>
+          <SubScore faceScore="2" speechScore="0" motorScore="1" setModalShow={setModalShow}/>
         </SideBar>
+        <Graph/>
       </Content>
     </ReturningClientDiv>
   );
