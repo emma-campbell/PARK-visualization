@@ -13,16 +13,15 @@ const ModalDiv = styled.div`
   height: 50%;
 `;
 
-const ModalData = () => {
-  const categories = ["Jitter", "Shimmer", "Pitch"];
+const ModalData = ({categories, descriptions}) => {
   return (
     <ModalDiv>
       <h2>{categories[0]}</h2>
-      <p>lorem ipsum</p>
+      <p>{descriptions[0]}</p>
       <h2>{categories[1]}</h2>
-      <p>lorem ipsum</p>
+      <p>{descriptions[1]}</p>
       <h2>{categories[2]}</h2>
-      <p>lorem ipsum</p>
+      <p>{descriptions[2]}</p>
     </ModalDiv>
   );
 };

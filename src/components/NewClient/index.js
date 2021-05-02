@@ -87,7 +87,9 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
+  
   const [modalShow, setModalShow] = React.useState(false);
+
   var data = [
     {
       name: "Page A",
@@ -133,7 +135,14 @@ const NewClient = () => {
     },
   ];
 
-  const body = <ModalData />;
+  const categories = ["Jitter", "Shimmer", "Pitch"];
+  const descriptions = [
+    "lorem ipsum",
+    "lorem ipsum",
+    "lorem ipsum"
+  ];
+
+  const body = <ModalData categories={categories} descriptions={descriptions}/>;
 
   return (
     <NewClientDiv>
