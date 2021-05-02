@@ -1,5 +1,5 @@
-import React from 'react';
-import {Modal, Button} from '@material-ui/core';
+import React from "react";
+import { Modal } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -81,15 +81,14 @@ const Graph = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45vh;
+  height: 43vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
 
 const NewClient = () => {
-  
-  const categories = ["Jitter", "Shimmer", "Pitch"];
   const [modalShow, setModalShow] = React.useState(false);
+
   var data = [
     {
       name: "Page A",
@@ -135,16 +134,19 @@ const NewClient = () => {
     },
   ];
 
+  const categories = ["Jitter", "Shimmer", "Pitch"];
+  const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
+  const scores = [80, 95, 70];
   const body = (
-    <ModalData />
+    <ModalData
+      categories={categories}
+      descriptions={descriptions}
+      scores={scores}
+    />
   );
 
   return (
     <NewClientDiv>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
       <Modal
         open={modalShow}
         onClose={() => setModalShow(false)}
@@ -153,7 +155,7 @@ const NewClient = () => {
       >
         {body}
       </Modal>
-      
+
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
@@ -162,12 +164,17 @@ const NewClient = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence score="3" confidence="78" />
+          <Confidence score="4" confidence="78" />
           <ShareResults />
         </SideBar>
         <Data>
           <Scores>
-            <SubScore faceScore="3" speechScore="4" motorScore="3" />
+            <SubScore
+              faceScore="3"
+              speechScore="4"
+              motorScore="2"
+              setModalShow={setModalShow}
+            />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">

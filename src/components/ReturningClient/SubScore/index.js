@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import ProgressBar from "../../NewClient/ProgressBar";
+import ProgressBar from "../../ProgressBar";
 import LeftArrow from "../../NewClient/SubScore/LeftArrow";
 import RightArrow from "../../NewClient/SubScore/RightArrow";
 
@@ -63,7 +63,7 @@ const ArrowDiv = styled.div`
   }
 `;
 
-const SubScore = ({ faceScore, speechScore, motorScore }) => {
+const SubScore = ({ faceScore, speechScore, motorScore, setModalShow }) => {
   const [category, setCategory] = useState("MOTOR");
   const [task, setTask] = useState("4");
   const [score, setScore] = useState(motorScore);
@@ -134,9 +134,9 @@ const SubScore = ({ faceScore, speechScore, motorScore }) => {
         <h2>SCORE | {score}</h2>
         <ProgressBar completed={percent} />
         <RightAlignedButtonDiv>
-            <button>
+          <button onClick={() => setModalShow(true)}>
             <p>EXPLAIN MY SCORE</p>
-            </button>
+          </button>
         </RightAlignedButtonDiv>
       </div>
       <ArrowDiv>

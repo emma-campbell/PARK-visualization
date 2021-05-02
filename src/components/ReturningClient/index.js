@@ -1,5 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+
+// STYLED COMPONENTS
 import styled from "styled-components";
+
+import { Modal } from "@material-ui/core";
+import ModalData from "../ModalData";
 
 // LOGO
 import PARK from "../../images/PARK.png";
@@ -51,8 +57,31 @@ const FillerDiv = styled.div`
 `;
 
 const ReturningClients = () => {
+
+  const [modalShow, setModalShow] = useState(false);
+  
+  const categories = ["Jitter", "Shimmer", "Pitch"];
+  const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
+  const scores = [80, 95, 70];
+  const body = (
+    <ModalData
+      categories={categories}
+      descriptions={descriptions}
+      scores={scores}
+    />
+  );
+
+  
   return (
     <ReturningClientDiv>
+      <Modal
+        open={modalShow}
+        onClose={() => setModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
@@ -62,7 +91,7 @@ const ReturningClients = () => {
       <Content>
         <SideBar>
           <FillerDiv>CONFIDENCE</FillerDiv>
-          <SubScore faceScore="2" speechScore="3" motorScore="4"/>
+          <SubScore faceScore="2" speechScore="3" motorScore="4" setModalShow={setModalShow}/>
         </SideBar>
       </Content>
     </ReturningClientDiv>
