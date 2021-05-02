@@ -81,7 +81,7 @@ const Graph = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 45vh;
+  height: 43vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
@@ -154,7 +154,7 @@ const NewClient = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence score="3" confidence="78" />
+          <Confidence score="4" confidence="78" />
           <ShareResults />
         </SideBar>
         <Data>

@@ -14,8 +14,6 @@ const ShareDiv = styled.div`
     margin: 0;
     padding-bottom: 0.25em;
   }
-
-  
 `;
 
 const Buttons = styled.div`
@@ -40,12 +38,12 @@ const Buttons = styled.div`
     background-color: #D7D7D7;
   }
 
-  @media only screen and (min-width: 1250px) {
+  @media only screen and (min-width: 1030px) and (max-width: 1366px) {
     & button {
       padding-top: 1em;
       padding-bottom: 1em;
-    }
-  }
+    }  
+  }  
 `;
 
 const ShareResults = () => {

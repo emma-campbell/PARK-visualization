@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import Score5 from "../../../images/Score5.png";
 import Score4 from "../../../images/Score4.png";
 import Score3 from "../../../images/Score3.png";
 import Score2 from "../../../images/Score2.png";
 import Score1 from "../../../images/Score1.png";
+import Score0 from "../../../images/Score0.png";
 
 const ConfidenceDiv = styled.div`
   padding-top: 1em;
@@ -21,6 +21,7 @@ const ConfidenceDiv = styled.div`
 
   & h1 {
     margin-top: 0;
+    margin-bottom: 0;
     padding-top: 1em;
     font-size: 1.75em;
   }
@@ -45,7 +46,7 @@ const FeedbackText = styled.div`
     font-size: 1.5em;
   }
 
-  @media only screen and (min-width: 1250px) {
+  @media only screen and (min-width: 1400px) {
     & p {
       margin: 0;
       font-size: 2em;
@@ -56,24 +57,24 @@ const FeedbackText = styled.div`
 const Confidence = ({ score, confidence }) => {
   var feedback = "";
   var img;
-  if (score === "5") {
+  if (score === "4") {
     feedback =
       "We recommend that you consult with a neurologist about your symptoms";
-    img = Score5;
-  } else if (score === "4") {
-    feedback = "";
     img = Score4;
   } else if (score === "3") {
-    feedback =
-      "You are displaying mild symptoms. It may be time to consult with a neurologist.";
+    feedback = "";
     img = Score3;
   } else if (score === "2") {
     feedback =
-      "You are displaying minimal symptoms. Please continue to track your symptoms.";
+      "You are displaying mild symptoms. It may be time to consult with a neurologist.";
     img = Score2;
+  } else if (score === "1") {
+    feedback =
+      "You are displaying minimal symptoms. Please continue to track your symptoms.";
+    img = Score1;
   } else {
     feedback = "";
-    img = Score1;
+    img = Score0;
   }
 
   return (

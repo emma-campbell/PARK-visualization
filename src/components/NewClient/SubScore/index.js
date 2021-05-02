@@ -26,6 +26,7 @@ const SubScoreDiv = styled.div`
 
   & p {
     margin-top: 0;
+    margin-bottom: 0.25em;
     color: #878787;
   }
 `;
