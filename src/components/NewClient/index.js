@@ -87,7 +87,6 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
-  
   const [modalShow, setModalShow] = React.useState(false);
 
   var data = [
@@ -136,13 +135,15 @@ const NewClient = () => {
   ];
 
   const categories = ["Jitter", "Shimmer", "Pitch"];
-  const descriptions = [
-    "lorem ipsum",
-    "lorem ipsum",
-    "lorem ipsum"
-  ];
-
-  const body = <ModalData categories={categories} descriptions={descriptions}/>;
+  const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
+  const scores = [80, 95, 70];
+  const body = (
+    <ModalData
+      categories={categories}
+      descriptions={descriptions}
+      scores={scores}
+    />
+  );
 
   return (
     <NewClientDiv>

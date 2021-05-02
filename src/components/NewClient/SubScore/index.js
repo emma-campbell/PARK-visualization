@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import ProgressBar from "../ProgressBar";
+import ProgressBar from "../../ProgressBar";
 import LeftArrow from "./LeftArrow";
 import RightArrow from "./RightArrow";
 
