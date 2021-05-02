@@ -188,7 +188,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 const CustomizedDot = (props) => {
   const { cx, cy, stroke, payload } = props;
   console.log(payload);
-  if (payload.z == 0) {
+  if (payload.z === 0) {
     return (
       <svg
         x={cx - 10}
@@ -284,7 +284,6 @@ const Graph = () => {
             paddingBottom: "0",
             backgroundColor: overallShow ? "#003972" : "#999393",
             color: "white",
-            borderRadius: "0",
             borderRadius: "22px",
           }}
           onClick={() => {
