@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import React, {useContext} from 'react';
+import Button from "@material-ui/core/Button";
+import AppContext from '../../components/AppContext';
 
 const LogInDiv = styled.div`
   display: flex;
@@ -138,6 +142,11 @@ const CheckBoxField = styled.div`
 `;
 
 const LogIn = () => {
+
+  const {isPatient, setIsPatient} = useContext(AppContext);
+  
+  console.log("LOGIN is PATIENT");
+  console.log(isPatient);
   return (
     <LogInDiv>
       <TextDiv>
@@ -163,7 +172,7 @@ const LogIn = () => {
                 <input type="checkbox" class="form-check-input" />
                 <label class="form-label"><p>Remember Me</p></label>
               </CheckBoxField>
-              <button><p>Log In</p></button>
+              <Button style={{borderRadius: "40px"}}component={Link} to={isPatient ? "/startStudy" : "/clinicians"}><button><p>Log In</p></button></Button>
             </form>
           </CardContent>
         </Card>

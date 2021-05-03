@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { Link, useHistory } from "react-router-dom";
+import React, {useContext} from 'react';
+import Button from "@material-ui/core/Button";
+import AppContext from '../../components/AppContext';
 
 const SignUpDiv = styled.div`
   display: flex;
@@ -35,7 +39,7 @@ const Card = styled.div`
   justify-items: center;
   align-items: center;
   width: 80%;
-  height: 75vh;
+  height: 70vh;
   border-radius: 6px;
   background-color: #ffffff;
   color: #000000;
@@ -91,10 +95,15 @@ const Divider = styled.div`
 `
 
 const SignUp = () => {
+
+  const {isPatient, setIsPatient} = useContext(AppContext);
+
+  let history = useHistory(); 
+  
   return (
     <SignUpDiv>
       <TextDiv>
-        <h1>Sign Up</h1>
+        <h1>Sign In</h1>
       </TextDiv>
       <Content>
         <Card>
@@ -117,7 +126,7 @@ const SignUp = () => {
               />
             </svg>
             <p>Track your diagnostic data over time.</p>
-            <button><p>I am a Patient</p></button>
+            <Button style={{borderRadius: "40px"}}component={Link} to="/log-in"><button><p>I am a Patient</p></button></Button>
           </CardContent>
           <Divider/>
           <CardContent>
@@ -135,7 +144,7 @@ const SignUp = () => {
               />
             </svg>
             <p>Keep track of patients over time.</p>
-            <button><p>I am a Provider</p></button>
+            <Button style={{borderRadius: "40px"}} onClick={() => {setIsPatient(false); console.log(isPatient); history.push('/log-in');}}><button><p>I am a Provider</p></button></Button>
           </CardContent>
         </Card>
       </Content>
