@@ -7,9 +7,9 @@ import RightArrow from "../../NewClient/SubScore/RightArrow";
 
 const SubScoreDiv = styled.div`
   padding: 1em;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
@@ -26,13 +26,14 @@ const SubScoreDiv = styled.div`
 
   & p {
     margin-top: 0;
+    margin-bottom: 0.25em;
     color: #878787;
   }
 `;
 
 const RightAlignedButtonDiv = styled.div`
   display: flex;
-  padding-top: 2em;
+  padding-top: 1em;
   justify-content: flex-end;
 
   & button {
@@ -63,7 +64,7 @@ const ArrowDiv = styled.div`
   }
 `;
 
-const SubScore = ({ faceScore, speechScore, motorScore, setModalShow }) => {
+const SubScore = ({ faceScore, speechScore, motorScore , setMotorShow, setFaceShow, setSpeechShow}) => {
   const [category, setCategory] = useState("MOTOR");
   const [task, setTask] = useState("4");
   const [score, setScore] = useState(motorScore);
@@ -121,24 +122,38 @@ const SubScore = ({ faceScore, speechScore, motorScore, setModalShow }) => {
   }
 
   useEffect(() => {
-    calcPercent();
-  });
+      calcPercent();
+  })
 
   return (
     <SubScoreDiv>
-      <div>
-        <h1>{category}</h1>
-        <p>Task {task}</p>
-      </div>
-      <div>
-        <h2>SCORE | {score}</h2>
-        <ProgressBar completed={percent} />
-        <RightAlignedButtonDiv>
-          <button onClick={() => setModalShow(true)}>
-            <p>EXPLAIN MY SCORE</p>
-          </button>
-        </RightAlignedButtonDiv>
-      </div>
+      <h1>{category}</h1>
+      <p>Task {task}</p>
+      <h2>SCORE | {score}</h2>
+      <ProgressBar completed={percent} />
+      <RightAlignedButtonDiv>
+        <button onClick={() => 
+          {
+            setMotorShow(false);
+            setFaceShow(false);
+            setSpeechShow(false);
+
+            switch(category){
+              case "MOTOR":
+                setMotorShow(true);
+                break;
+              case "FACE":
+                setFaceShow(true);
+                break;
+              case "SPEECH":
+                setSpeechShow(true);
+                break;
+            }
+          }
+        }>
+          <p>EXPLAIN MY SCORE</p>
+        </button>
+      </RightAlignedButtonDiv>
       <ArrowDiv>
         <LeftArrow onClick={leftClick} />
         <RightArrow onClick={rightClick} />

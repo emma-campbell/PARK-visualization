@@ -64,7 +64,7 @@ const ArrowDiv = styled.div`
   }
 `;
 
-const SubScore = ({ faceScore, speechScore, motorScore , setModalShow}) => {
+const SubScore = ({ faceScore, speechScore, motorScore , setMotorShow, setFaceShow, setSpeechShow}) => {
   const [category, setCategory] = useState("MOTOR");
   const [task, setTask] = useState("4");
   const [score, setScore] = useState(motorScore);
@@ -132,7 +132,25 @@ const SubScore = ({ faceScore, speechScore, motorScore , setModalShow}) => {
       <h2>SCORE | {score}</h2>
       <ProgressBar completed={percent} />
       <RightAlignedButtonDiv>
-        <button onClick={() => setModalShow(true)}>
+        <button onClick={() => 
+          {
+            setMotorShow(false);
+            setFaceShow(false);
+            setSpeechShow(false);
+
+            switch(category){
+              case "MOTOR":
+                setMotorShow(true);
+                break;
+              case "FACE":
+                setFaceShow(true);
+                break;
+              case "SPEECH":
+                setSpeechShow(true);
+                break;
+            }
+          }
+        }>
           <p>EXPLAIN MY SCORE</p>
         </button>
       </RightAlignedButtonDiv>

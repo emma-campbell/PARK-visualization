@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // STYLED COMPONENTS
@@ -63,12 +63,24 @@ const SideBar = styled.div`
 
 const ReturningClients = () => {
 
-  const [modalShow, setModalShow] = useState(false);
-  
-  const categories = ["Jitter", "Shimmer", "Pitch"];
+
+  const [motorModalShow, setMotorModalShow] = React.useState(false);
+  const [faceModalShow, setFaceModalShow] = React.useState(false);
+  const [speechModalShow, setSpeechModalShow] = React.useState(false);
+  const speech_categories = ["Jitter", "Shimmer", "Pitch"];
+  const face_categories = ["Rigidity", "Stiffness", "Slowness"];
+  const motor_categories = ["Tremor", "Stiffness", "Balance"];
   const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
-  const scores = [45, 95, 70];
-  const body = (
+  const scores = [80, 95, 70];
+
+  const generate_random_score = () => {
+    const x = Math.floor(Math.random() * 100);
+    const y = Math.floor(Math.random() * 100);
+    const z = Math.floor(Math.random() * 100);
+    return [x, y, z];
+  };
+
+  const body = (categories, descriptions, scores) => (
     <ModalData
       categories={categories}
       descriptions={descriptions}
@@ -79,13 +91,32 @@ const ReturningClients = () => {
   return (
     <ReturningClientDiv>
       <Modal
-        open={modalShow}
-        onClose={() => setModalShow(false)}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        {body}
-      </Modal>
+    open={motorModalShow}
+    onClose={() => setMotorModalShow(false)}
+    aria-labelledby="simple-modal-title"
+    aria-describedby="simple-modal-description"
+  >
+    {body(motor_categories, descriptions, generate_random_score())}
+  </Modal>
+
+  <Modal
+    open={faceModalShow}
+    onClose={() => setFaceModalShow(false)}
+    aria-labelledby="simple-modal-title"
+    aria-describedby="simple-modal-description"
+  >
+    {body(face_categories, descriptions, generate_random_score())}
+  </Modal>
+
+  <Modal
+    open={speechModalShow}
+    onClose={() => setSpeechModalShow(false)}
+    aria-labelledby="simple-modal-title"
+    aria-describedby="simple-modal-description"
+  >
+    {body(speech_categories, descriptions, generate_random_score())}
+  </Modal>
+
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
@@ -95,7 +126,9 @@ const ReturningClients = () => {
       <Content>
         <SideBar>
           <Confidence score="1" confidence="78"/>
-          <SubScore faceScore="2" speechScore="0" motorScore="1" setModalShow={setModalShow}/>
+          <SubScore faceScore="2" speechScore="0" motorScore="1" setMotorShow={setMotorModalShow}
+              setSpeechShow={setMotorModalShow}
+              setFaceShow={setMotorModalShow}/>
         </SideBar>
         <Graph/>
       </Content>

@@ -10,9 +10,14 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
+  LabelList,
+  Label,
+  Cell,
   Bar,
   ResponsiveContainer,
+  ComposedChart,
+  Area,
+  Line
 } from "recharts";
 
 // LOGO
@@ -87,57 +92,83 @@ const Graph = styled.div`
 `;
 
 const NewClient = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [motorModalShow, setMotorModalShow] = React.useState(false);
+  const [faceModalShow, setFaceModalShow] = React.useState(false);
+  const [speechModalShow, setSpeechModalShow] = React.useState(false);
 
-  var data = [
+  const populationData = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
+      "name": "13th Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 4000,
+      "pv": 2400,
+      "amt": 2400
     },
     {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
+      "name": "23rd Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 3000,
+      "pv": 4800,
+      "amt": 2210
     },
     {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
+      "name": "37th Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 2000,
+      "pv": 7200,
+      "amt": 2290
     },
     {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
+      "name": "50th Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 2780,
+      "pv": 12000,
+      "amt": 2000
     },
     {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
+      "name": "63rd Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 1890,
+      "pv": 7000,
+      "amt": 2181
     },
     {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
+      "name": "76th Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 2390,
+      "pv": 3800,
+      "amt": 2500
     },
     {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+      "name": "90th+ Percentile",
+      "here": "you are here",
+      "not_here": "",
+      "uv": 3490,
+      "pv": 1300,
+      "amt": 2100
+    }
+  ]
 
-  const categories = ["Jitter", "Shimmer", "Pitch"];
+  const speech_categories = ["Jitter", "Shimmer", "Pitch"];
+  const face_categories = ["Rigidity", "Stiffness", "Slowness"];
+  const motor_categories = ["Tremor", "Stiffness", "Balance"];
   const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
   const scores = [80, 95, 70];
-  const body = (
+
+  const generate_random_score = () => {
+    const x = Math.floor(Math.random() * 100);
+    const y = Math.floor(Math.random() * 100);
+    const z = Math.floor(Math.random() * 100);
+    return [x, y, z];
+  };
+
+  const body = (categories, descriptions, scores) => (
     <ModalData
       categories={categories}
       descriptions={descriptions}
@@ -148,12 +179,30 @@ const NewClient = () => {
   return (
     <NewClientDiv>
       <Modal
-        open={modalShow}
-        onClose={() => setModalShow(false)}
+        open={motorModalShow}
+        onClose={() => setMotorModalShow(false)}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body}
+        {body(motor_categories, descriptions, generate_random_score())}
+      </Modal>
+
+      <Modal
+        open={faceModalShow}
+        onClose={() => setFaceModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body(face_categories, descriptions, generate_random_score())}
+      </Modal>
+
+      <Modal
+        open={speechModalShow}
+        onClose={() => setSpeechModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body(speech_categories, descriptions, generate_random_score())}
       </Modal>
 
       <LogoBar>
@@ -170,23 +219,29 @@ const NewClient = () => {
         <Data>
           <Scores>
             <SubScore
-              faceScore="3"
-              speechScore="4"
-              motorScore="2"
-              setModalShow={setModalShow}
+              faceScore="1"
+              speechScore="0"
+              motorScore="1"
+              setMotorShow={setMotorModalShow}
+              setSpeechShow={setMotorModalShow}
+              setFaceShow={setMotorModalShow}
             />
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
-              <BarChart fontFamily={"Hind, sans-serif"} data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
+              <ComposedChart width={730} height={250} data={populationData}>
                 <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
-                <Legend wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
-                <Bar dataKey="pv" fill="#003972" />
-                <Bar dataKey="uv" fill="#003972" />
-              </BarChart>
+                <CartesianGrid stroke="#f5f5f5" />
+                
+                <Area type="monotone" dataKey="pv" fill="#948e8c" stroke="#8884d8" />
+                <Bar dataKey="pv" barSize={20} fill="#003972">
+                { populationData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={index == 2 ? "#ff7300" : "#003972"} />
+                    ))
+                }
+                </Bar>
+                <Line type="monotone" dataKey="pv" stroke="#ff7300" />
+              </ComposedChart>
             </ResponsiveContainer>
           </Graph>
         </Data>
@@ -196,3 +251,19 @@ const NewClient = () => {
 };
 
 export default NewClient;
+
+
+/*
+
+<BarChart fontFamily={"Hind, sans-serif"} data={data}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
+                <Legend wrapperStyle={{ fontFamily: "Hind, san-serif" }} />
+                <Bar dataKey="pv" fill="#003972" />
+                <Bar dataKey="uv" fill="#003972" />
+              </BarChart>
+
+
+*/
