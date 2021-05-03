@@ -126,7 +126,7 @@ const SignUp = () => {
               />
             </svg>
             <p>Track your diagnostic data over time.</p>
-            <Button style={{borderRadius: "40px"}} onClick={() => {setIsPatient(true); console.log(isPatient); history.push('/log-in');}}><button><p>I am a Patient</p></button></Button>
+            <button onClick={() => {setIsPatient(true); console.log(isPatient); history.push('/log-in');}}><p>I am a Patient</p></button>
           </CardContent>
           <Divider/>
           <CardContent>
@@ -144,7 +144,7 @@ const SignUp = () => {
               />
             </svg>
             <p>Keep track of patients over time.</p>
-            <Button style={{borderRadius: "40px"}} onClick={() => {setIsPatient(false); console.log(isPatient); history.push('/log-in');}}><button><p>I am a Provider</p></button></Button>
+            <button onClick={() => {setIsPatient(false); console.log(isPatient); history.push('/log-in');}}><p>I am a Provider</p></button>
           </CardContent>
         </Card>
       </Content>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, {useContext} from 'react';
 import Button from "@material-ui/core/Button";
 import AppContext from '../../components/AppContext';
@@ -143,10 +143,10 @@ const CheckBoxField = styled.div`
 
 const LogIn = () => {
 
-  const {isPatient, setIsPatient} = useContext(AppContext);
-  
-  console.log("LOGIN is PATIENT");
-  console.log(isPatient);
+  const {isPatient, setVideoNumber, setIsPatient} = useContext(AppContext);
+  let history = useHistory();
+  setVideoNumber(1);
+
   return (
     <LogInDiv>
       <TextDiv>
@@ -172,7 +172,7 @@ const LogIn = () => {
                 <input type="checkbox" class="form-check-input" />
                 <label class="form-label"><p>Remember Me</p></label>
               </CheckBoxField>
-              <Button style={{borderRadius: "40px"}}component={Link} to={isPatient ? "/startStudy" : "/clinicians"}><button><p>Log In</p></button></Button>
+              <button onClick={() => {history.push(isPatient ? "/startStudy" : "/clinicians")}}><p>Log In</p></button>
             </form>
           </CardContent>
         </Card>

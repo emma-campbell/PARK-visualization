@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = { 
@@ -44,7 +45,7 @@ export class startStudy extends Component {
 
 					</div>
 					<div className="center-align" style={{marginTop: "50px"}}>
-                        <Button style={styles.Button}>
+                        <Button style={styles.Button} component={Link} to={"/task"}> 
                             Begin Study
                         </Button>
 					</div>

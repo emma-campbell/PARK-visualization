@@ -42,6 +42,7 @@ const HeroDiv = styled.div`
   & button:hover {
     background-color: #002D5A;
   }
+  
 `;
 
 const TitleDiv = styled.div`
@@ -57,12 +58,13 @@ const TitleDiv = styled.div`
 `;
 
 const Hero = () => {
+  let history = useHistory();
   return (
     <HeroDiv>
       <TitleDiv>
         <h1>PARKTest.net</h1>
         <h2>On-Demand Parkinson's Evaluation</h2>
-        <Button style={{borderRadius: "40px"}}component={Link} to={"/sign-up"}><button><p>GET STARTED</p></button></Button>
+        <button onClick={() => {history.push('/sign-up')}}><p>GET STARTED</p></button>
       </TitleDiv>
     </HeroDiv>
   );
