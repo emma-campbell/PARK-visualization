@@ -17,17 +17,23 @@ const ConfidenceDiv = styled.div`
 
   & img {
     width: 65%;
+    max-height: 135px;
+    max-width: 225px;
   }
 
   & h1 {
     margin-top: 0;
-    padding-top: 0.5em;
-    font-size: 1.75em;
+    padding-top: 0;
   }
 
-  @media only screen and (min-width: 1030px) and (max-width: 1366px) {
+  @media screen and (min-device-width: 500px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
     & h1 {
-      font-size: 2em;
+      font-size: 1.75em;
+    }
+
+    & img {
+      max-height: 135px;
+      max-width: 225px;
     }
   }
 `;
@@ -48,9 +54,9 @@ const Confidence = ({ score, confidence }) => {
   }
 
   return (
-    <ConfidenceDiv> 
-        <img src={img} alt="score" />
-        <h1>CONFIDENCE | {confidence}%</h1>
+    <ConfidenceDiv>
+      <img src={img} alt="score" />
+      <h1>CONFIDENCE | {confidence}%</h1>
     </ConfidenceDiv>
   );
 };

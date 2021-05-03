@@ -17,7 +17,8 @@ import {
 const GraphContainer = styled.div`
   background-color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-grow:1;
   justify-content: center;
   align-items: center;
   margin-left: 1em;
@@ -37,9 +38,14 @@ const GraphContainer = styled.div`
   }
 `;
 
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const DateDiv = styled.div`
   width: 100%;
-  margin-left: 12%;
+  padding-left: 5%;
   text-align: left;
   display: flex;
 `;
@@ -47,7 +53,7 @@ const DateDiv = styled.div`
 const ButtonDiv = styled.div`
   display: flex;
   width: 100%;
-  margin-left: 10%;
+  margin-left: 5%;
   
   & button {
     margin-left: 1em;
@@ -187,7 +193,6 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const CustomizedDot = (props) => {
   const { cx, cy, payload } = props;
-  console.log(payload);
   if (payload.z === 0) {
     return (
       <svg
@@ -215,154 +220,157 @@ const Graph = () => {
 
   return (
     <GraphContainer>
-      <DateDiv>
-        <h1>{moment(new Date(test_time)).format("MMMM DD, YYYY")}</h1>
-      </DateDiv>
-      <ButtonDiv>
-        <Button
-          variant="contained"
-          size="large"
-          style={{
-            marginBottom: "0",
-            paddingTop: "0",
-            paddingBottom: "0",
-            backgroundColor: motorShow ? "#003972" : "#999393",
-            color: "white",
-            borderRadius: "22px",
-          }}
-          onClick={() => {
-            setMotorShow(!motorShow);
-            console.log(motorShow);
+      <Content>
+
+        <DateDiv>
+          <h1>{moment(new Date(test_time)).format("MMMM DD, YYYY")}</h1>
+        </DateDiv>
+        <ButtonDiv>
+          <Button
+            variant="contained"
+            size="large"
+            style={{
+              marginBottom: "0",
+              paddingTop: "0",
+              paddingBottom: "0",
+              backgroundColor: motorShow ? "#003972" : "#999393",
+              color: "white",
+              borderRadius: "22px",
+            }}
+            onClick={() => {
+              setMotorShow(!motorShow);
+              console.log(motorShow);
+            }}
+          >
+            <p>MOTOR</p>
+          </Button>
+          <Button
+            variant="contained"
+            size="large"
+            style={{
+              marginBottom: "0",
+              backgroundColor: faceShow ? "#003972" : "#999393",
+              color: "white",
+              paddingTop: "0",
+              paddingBottom: "0",
+              paddingRight: "2em",
+              paddingLeft: "2em",
+              borderRadius: "22px",
+            }}
+            onClick={() => {
+              setFaceShow(!faceShow);
+              console.log(faceShow);
+            }}
+          >
+            <p>FACE</p>
+          </Button>
+          <Button
+            variant="contained"
+            size="large"
+            style={{
+              marginBottom: "0",
+              paddingTop: "0",
+              paddingBottom: "0",
+              backgroundColor: speechShow ? "#003972" : "#999393",
+              color: "white",
+              borderRadius: "22px",
+            }}
+            onClick={() => {
+              setSpeechShow(!speechShow);
+              console.log(speechShow);
+            }}
+          >
+            <p>SPEECH</p>
+          </Button>
+          <Button
+            variant="contained"
+            size="large"
+            style={{
+              marginBottom: "0",
+              paddingTop: "0",
+              paddingBottom: "0",
+              backgroundColor: overallShow ? "#003972" : "#999393",
+              color: "white",
+              borderRadius: "22px",
+            }}
+            onClick={() => {
+              setOverallShow(!overallShow);
+              console.log(overallShow);
+            }}
+          >
+            <p>OVERALL</p>
+          </Button>
+        </ButtonDiv>
+        <LineChart
+          width={800}
+          height={400}
+          data={data}
+          margin={{
+            top: 20
           }}
         >
-          <p>MOTOR</p>
-        </Button>
-        <Button
-          variant="contained"
-          size="large"
-          style={{
-            marginBottom: "0",
-            backgroundColor: faceShow ? "#003972" : "#999393",
-            color: "white",
-            paddingTop: "0",
-            paddingBottom: "0",
-            paddingRight: "2em",
-            paddingLeft: "2em",
-            borderRadius: "22px",
-          }}
-          onClick={() => {
-            setFaceShow(!faceShow);
-            console.log(faceShow);
-          }}
-        >
-          <p>FACE</p>
-        </Button>
-        <Button
-          variant="contained"
-          size="large"
-          style={{
-            marginBottom: "0",
-            paddingTop: "0",
-            paddingBottom: "0",
-            backgroundColor: speechShow ? "#003972" : "#999393",
-            color: "white",
-            borderRadius: "22px",
-          }}
-          onClick={() => {
-            setSpeechShow(!speechShow);
-            console.log(speechShow);
-          }}
-        >
-          <p>SPEECH</p>
-        </Button>
-        <Button
-          variant="contained"
-          size="large"
-          style={{
-            marginBottom: "0",
-            paddingTop: "0",
-            paddingBottom: "0",
-            backgroundColor: overallShow ? "#003972" : "#999393",
-            color: "white",
-            borderRadius: "22px",
-          }}
-          onClick={() => {
-            setOverallShow(!overallShow);
-            console.log(overallShow);
-          }}
-        >
-          <p>OVERALL</p>
-        </Button>
-      </ButtonDiv>
-      <LineChart
-        width={800}
-        height={400}
-        data={data}
-        margin={{
-          top: 20
-        }}
-      >
-        <CartesianGrid />
-        <XAxis
-          dataKey="date"
-          name="Time"
-          tickFormatter={xTickFormatter}
-          type="category"
-          interval={0}
-          allowDataOverflow
-        />
-        <YAxis
-          type="number"
-          dataKey="y"
-          name="PD Rating"
-          unit=""
-          domain={[0, 4]}
-        />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend />
-        {motorShow ? (
-          <Line
-            name="motor"
+          <CartesianGrid />
+          <XAxis
+            dataKey="date"
+            name="Time"
+            tickFormatter={xTickFormatter}
+            type="category"
+            interval={0}
+            allowDataOverflow
+          />
+          <YAxis
+            type="number"
             dataKey="y"
+            name="PD Rating"
+            unit=""
+            domain={[0, 4]}
+          />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend />
+          {motorShow ? (
+            <Line
+              name="motor"
+              dataKey="y"
+              stroke="#003972"
+              strokeWidth={3}
+              dot={<CustomizedDot />}
+            />
+          ) : null}
+          {speechShow ? (
+            <Line
+              name="speech"
+              dataKey="w"
+              stroke="#B2ACAB"
+              strokeWidth={3}
+              dot={<CustomizedDot />}
+            />
+          ) : null}
+          {faceShow ? (
+            <Line
+              name="face"
+              dataKey="f"
+              stroke="#0071E2"
+              strokeWidth={3}
+              dot={<CustomizedDot />}
+            />
+          ) : null}
+          {overallShow ? (
+            <Line
+              name="overall"
+              dataKey="o"
+              stroke="#676363"
+              strokeWidth={3}
+              dot={<CustomizedDot />}
+            />
+          ) : null}
+          <Brush
+            dataKey="x"
+            height={30}
             stroke="#003972"
-            strokeWidth={3}
-            dot={<CustomizedDot />}
+            fontFamily="Hind, san-serif"
           />
-        ) : null}
-        {speechShow ? (
-          <Line
-            name="speech"
-            dataKey="w"
-            stroke="#B2ACAB"
-            strokeWidth={3}
-            dot={<CustomizedDot />}
-          />
-        ) : null}
-        {faceShow ? (
-          <Line
-            name="face"
-            dataKey="f"
-            stroke="#0071E2"
-            strokeWidth={3}
-            dot={<CustomizedDot />}
-          />
-        ) : null}
-        {overallShow ? (
-          <Line
-            name="overall"
-            dataKey="o"
-            stroke="#676363"
-            strokeWidth={3}
-            dot={<CustomizedDot />}
-          />
-        ) : null}
-        <Brush
-          dataKey="x"
-          height={30}
-          stroke="#003972"
-          fontFamily="Hind, san-serif"
-        />
-      </LineChart>
+        </LineChart>
+      </Content>
     </GraphContainer>
   );
 };
