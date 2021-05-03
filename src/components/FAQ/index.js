@@ -11,7 +11,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 const FAQDiv = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: #003972;
   color: #ffffff;
 `;
@@ -35,6 +34,7 @@ const AccordionDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4em;
 `;
 
 const Accordions = styled.div`
