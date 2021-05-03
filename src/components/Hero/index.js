@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { Link, useHistory } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import LandingImage from "../../images/landing-bg.jpg";
 
 const HeroDiv = styled.div`
@@ -61,7 +62,7 @@ const Hero = () => {
       <TitleDiv>
         <h1>PARKTest.net</h1>
         <h2>On-Demand Parkinson's Evaluation</h2>
-        <button><p>GET STARTED</p></button>
+        <Button style={{borderRadius: "40px"}}component={Link} to={"/sign-up"}><button><p>GET STARTED</p></button></Button>
       </TitleDiv>
     </HeroDiv>
   );
