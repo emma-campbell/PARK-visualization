@@ -5,15 +5,15 @@ import BidirectionalProgressBar from "../BidirectionalProgressBar";
 
 const ModalDiv = styled.div`
   border-radius: 9px;
-  margin-top: 15%;
-  margin-left: 25%;
+  margin-top: 5%;
+  margin-left: 20%;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
   background-color: white;
   width: 50%;
-  height: 50%;
+  height: 75%;
 
   & h2 {
     margin: 0;
