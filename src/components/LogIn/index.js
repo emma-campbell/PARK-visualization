@@ -89,6 +89,7 @@ const CardContent = styled.div`
 
   & form {
     width: 80%;
+    padding: 2em;
   }
 `;
 
