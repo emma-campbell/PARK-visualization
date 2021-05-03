@@ -25,9 +25,13 @@ const TextDiv = styled.div`
 `
 
 const VideoDiv = styled.div`
-    display: flex;
-    background-color: #C4C4C4;
-`
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const About = () => {
   return (
@@ -37,7 +41,13 @@ const About = () => {
             <p>Watch this video for information on how to complete the study tasks.</p>
         </TextDiv>
         <VideoDiv>
-            
+        <video id="video1" style={{height:"100%", width: "100%"}} controls="controls">
+            <source
+              src={`instructionVideos/Task0.mp4`}
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
         </VideoDiv>
     </AboutDiv>
   );
