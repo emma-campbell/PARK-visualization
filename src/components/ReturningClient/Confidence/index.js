@@ -17,8 +17,8 @@ const ConfidenceDiv = styled.div`
 
   & img {
     width: 65%;
-    max-height: 135px;
-    max-width: 225px;
+    max-height: 115px;
+    max-width: 205px;
   }
 
   & h1 {
@@ -32,8 +32,8 @@ const ConfidenceDiv = styled.div`
     }
 
     & img {
-      max-height: 135px;
-      max-width: 225px;
+      max-height: 115px;
+      max-width: 205px;
     }
   }
 `;

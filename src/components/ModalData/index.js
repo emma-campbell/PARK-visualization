@@ -52,21 +52,21 @@ const ModalData = ({ categories, descriptions, scores }) => {
       <p>{descriptions[0]}</p>
       <ProgressDiv>
         <h1>{100-parseInt(scores[0])}%</h1>
-        <BidirectionalProgressBar width="75" completed={scores[0]} direction={ 100 - scores[0] > scores[0]}/>
+        <BidirectionalProgressBar width="75" completed={scores[0] > 100 - scores[0] ? scores[0] : 100-scores[0]} direction={ 100 - scores[0] > scores[0]}/>
         <h1>{scores[0]}%</h1>
       </ProgressDiv>
       <h2>{categories[1]}</h2>
       <p>{descriptions[1]}</p>
       <ProgressDiv>
         <h1>{100-parseInt(scores[1])}%</h1>
-        <BidirectionalProgressBar width="75" completed={scores[1]} direction={ 100 - scores[1] > scores[1]}/>
+        <BidirectionalProgressBar width="75" completed={scores[1] > 100 - scores[1] ? scores[1] : 100-scores[1]} direction={ 100 - scores[1] > scores[1]}/>
         <h1>{scores[1]}%</h1>
       </ProgressDiv>
       <h2>{categories[2]}</h2>
       <p>{descriptions[2]}</p>
       <ProgressDiv>
         <h1>{100-parseInt(scores[2])}%</h1>
-        <BidirectionalProgressBar width="75" completed={scores[2]} direction={ 100 - scores[2] > scores[2]} />
+        <BidirectionalProgressBar width="75" completed={scores[2] > 100 - scores[2] ? scores[2] : 100-scores[2]} direction={ 100 - scores[2] > scores[2]} />
         <h1>{scores[2]}%</h1>
       </ProgressDiv>
       <Disclaimer>
