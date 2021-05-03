@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-
+import React, { useState } from "react";
 
 const AppContext = React.createContext({
-    isPatient: true,
-    videoNumber: 1,
-    setIsPatient: () => {},
-    setVideoNumber: () => {}
+  isPatient: true,
+  videoNumber: 1,
+  setIsPatient: () => {},
+  setVideoNumber: () => {},
 });
+
 export default AppContext;
