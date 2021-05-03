@@ -121,7 +121,7 @@ const Task_Tutorial = () => {
           </p>
         </TextDiv>
         <VideoDiv>
-          <video id="video1" style={{height:"75%", width: "75%"}} controls="controls">
+          <video id="video1" style={{height:"75%"}} controls="controls">
             <source
               src={`instructionVideos/Task${videoNumber}.mp4`}
               type="video/mp4"
