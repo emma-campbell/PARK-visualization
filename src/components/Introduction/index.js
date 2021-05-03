@@ -7,7 +7,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import PARK from "../../images/PARK.png";
 
 const IntroductionDiv = styled.div`
-  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
@@ -46,6 +45,7 @@ const LogoBar = styled.div`
 const styles = {
   Button: {
     marginTop: "0.25em",
+    marginBottom: "4em",
     color: "#ffffff",
     paddingTop: "2em",
     paddingBottom: "2em",
