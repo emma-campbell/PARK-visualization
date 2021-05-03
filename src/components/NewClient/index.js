@@ -227,14 +227,14 @@ const NewClient = () => {
                 <XAxis dataKey="name" />
                 <CartesianGrid stroke="#f5f5f5" />
                 
-                <Area type="monotone" dataKey="pv" fill="#948e8c" stroke="#8884d8" />
+                <Area type="monotone" dataKey="pv" fill="#C0BBBA" stroke="#8884d8" />
                 <Bar dataKey="pv" barSize={20} fill="#003972">
                 { populationData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index === 2 ? "#ff7300" : "#003972"} />
+                    <Cell key={`cell-${index}`} fill={index === 2 ? "#0072F0" : "#003972"} />
                     ))
                 }
                 </Bar>
-                <Line type="monotone" dataKey="pv" stroke="#ff7300" />
+                <Line type="monotone" dataKey="pv" stroke="#0072F0" />
               </ComposedChart>
             </ResponsiveContainer>
           </Graph>
