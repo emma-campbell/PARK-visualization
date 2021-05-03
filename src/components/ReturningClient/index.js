@@ -56,7 +56,6 @@ const SideBar = styled.div`
 `;
 
 const ReturningClients = () => {
-  
   const [motorModalShow, setMotorModalShow] = React.useState(false);
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
@@ -80,35 +79,35 @@ const ReturningClients = () => {
       scores={scores}
     />
   );
-  
+
   return (
     <ReturningClientDiv>
       <Modal
-    open={motorModalShow}
-    onClose={() => setMotorModalShow(false)}
-    aria-labelledby="simple-modal-title"
-    aria-describedby="simple-modal-description"
-  >
-    {body(motor_categories, descriptions, generate_random_score())}
-  </Modal>
+        open={motorModalShow}
+        onClose={() => setMotorModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body(motor_categories, descriptions, generate_random_score())}
+      </Modal>
 
-  <Modal
-    open={faceModalShow}
-    onClose={() => setFaceModalShow(false)}
-    aria-labelledby="simple-modal-title"
-    aria-describedby="simple-modal-description"
-  >
-    {body(face_categories, descriptions, generate_random_score())}
-  </Modal>
+      <Modal
+        open={faceModalShow}
+        onClose={() => setFaceModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body(face_categories, descriptions, generate_random_score())}
+      </Modal>
 
-  <Modal
-    open={speechModalShow}
-    onClose={() => setSpeechModalShow(false)}
-    aria-labelledby="simple-modal-title"
-    aria-describedby="simple-modal-description"
-  >
-    {body(speech_categories, descriptions, generate_random_score())}
-  </Modal>
+      <Modal
+        open={speechModalShow}
+        onClose={() => setSpeechModalShow(false)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body(speech_categories, descriptions, generate_random_score())}
+      </Modal>
 
       <LogoBar>
         <Link to="/">
@@ -118,12 +117,17 @@ const ReturningClients = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence score="1" confidence="78"/>
-          <SubScore faceScore="2" speechScore="0" motorScore="1" setMotorShow={setMotorModalShow}
-              setSpeechShow={setMotorModalShow}
-              setFaceShow={setMotorModalShow}/>
+          <Confidence score="1" confidence="78" />
+          <SubScore
+            faceScore="2"
+            speechScore="0"
+            motorScore="1"
+            setMotorShow={setMotorModalShow}
+            setSpeechShow={setMotorModalShow}
+            setFaceShow={setMotorModalShow}
+          />
         </SideBar>
-        <Graph/>
+        <Graph />
       </Content>
     </ReturningClientDiv>
   );
