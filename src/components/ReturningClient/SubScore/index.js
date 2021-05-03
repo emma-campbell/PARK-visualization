@@ -148,6 +148,8 @@ const SubScore = ({ faceScore, speechScore, motorScore , setMotorShow, setFaceSh
               case "SPEECH":
                 setSpeechShow(true);
                 break;
+              default:
+                break;
             }
           }
         }>

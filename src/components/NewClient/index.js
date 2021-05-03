@@ -5,13 +5,8 @@ import styled from "styled-components";
 
 // RECHART
 import {
-  BarChart,
   CartesianGrid,
   XAxis,
-  YAxis,
-  Tooltip,
-  LabelList,
-  Label,
   Cell,
   Bar,
   ResponsiveContainer,
@@ -159,7 +154,6 @@ const NewClient = () => {
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
   const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
-  const scores = [80, 95, 70];
 
   const generate_random_score = () => {
     const x = Math.floor(Math.random() * 100);
@@ -236,7 +230,7 @@ const NewClient = () => {
                 <Area type="monotone" dataKey="pv" fill="#948e8c" stroke="#8884d8" />
                 <Bar dataKey="pv" barSize={20} fill="#003972">
                 { populationData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index == 2 ? "#ff7300" : "#003972"} />
+                    <Cell key={`cell-${index}`} fill={index === 2 ? "#ff7300" : "#003972"} />
                     ))
                 }
                 </Bar>

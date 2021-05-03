@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 // STYLED COMPONENTS
@@ -55,15 +55,7 @@ const SideBar = styled.div`
   width: 35%;
 `;
 
-// const FillerDiv = styled.div`
-//   padding: 1em;
-//   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-//     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-// `;
-
 const ReturningClients = () => {
-
-
   const [motorModalShow, setMotorModalShow] = React.useState(false);
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
@@ -71,7 +63,6 @@ const ReturningClients = () => {
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
   const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
-  const scores = [80, 95, 70];
 
   const generate_random_score = () => {
     const x = Math.floor(Math.random() * 100);
