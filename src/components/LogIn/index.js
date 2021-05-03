@@ -142,7 +142,7 @@ const CheckBoxField = styled.div`
 
 const LogIn = () => {
 
-  const {isPatient, setVideoNumber, setIsPatient} = useContext(AppContext);
+  const { isPatient, setVideoNumber } = useContext(AppContext);
   let history = useHistory();
   setVideoNumber(1);
 

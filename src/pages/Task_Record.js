@@ -144,7 +144,7 @@ export class Task_Record extends Component {
   }
 
   render() {
-    const { recording, videos } = this.state;
+    const { recording } = this.state;
     const { history } = this.props;
 
     return (
