@@ -9,6 +9,7 @@ const ShareDiv = styled.div`
   background-color: #003972;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 25vh;
 
   & h2 {
     margin: 0;
@@ -38,7 +39,7 @@ const Buttons = styled.div`
     background-color: #D7D7D7;
   }
 
-  @media only screen and (min-width: 1030px) and (max-width: 1366px) {
+  @media only screen and (min-width: 500px) and (max-width: 1366px) {
     & button {
       padding-top: 1em;
       padding-bottom: 1em;

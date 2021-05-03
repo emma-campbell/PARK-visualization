@@ -25,7 +25,7 @@ import ShareResults from "./ShareResults";
 import ModalData from "../ModalData";
 
 const NewClientDiv = styled.div`
-  height: 100vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
 `;

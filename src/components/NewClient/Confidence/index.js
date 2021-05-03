@@ -21,6 +21,7 @@ const ConfidenceDiv = styled.div`
 
   & h1 {
     margin-top: 0;
+    margin-bottom: 0;
     padding-top: 1em;
     font-size: 1.75em;
   }
@@ -43,6 +44,7 @@ const FeedbackText = styled.div`
   & p {
     color: #9a9a9a;
     font-size: 1.5em;
+    margin: 0;
   }
 `;
 
