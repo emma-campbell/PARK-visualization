@@ -37,11 +37,12 @@ const Card = styled.div`
   justify-items: center;
   align-items: center;
   width: 55%;
-  height: 65vh;
+  height: 75vh;
   border-radius: 6px;
   background-color: #ffffff;
   color: #000000;
   box-shadow: 5px 1px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 4em;
 `;
 
 const CardContent = styled.div`
