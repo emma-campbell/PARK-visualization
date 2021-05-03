@@ -12,8 +12,6 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import IconButton from "@material-ui/core/IconButton";
-import ContactMailIcon from "@material-ui/icons/ContactMail";
 
 const styles = (theme) => ({
   root: {

@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import React, {useContext} from 'react';
-import Button from "@material-ui/core/Button";
 import AppContext from '../../components/AppContext';
 
 const SignUpDiv = styled.div`

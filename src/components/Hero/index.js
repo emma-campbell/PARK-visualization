@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
 import LandingImage from "../../images/landing-bg.jpg";
 
 const HeroDiv = styled.div`
