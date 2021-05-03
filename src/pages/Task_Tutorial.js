@@ -12,7 +12,8 @@ const TaskDescriptionDiv = styled.div`
   height: 80vh;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
+  align-items:center;
   & p {
     font-size: 2em;
     margin-top: 0;
@@ -39,6 +40,8 @@ const TextDiv = styled.div`
 `;
 
 const VideoDiv = styled.div`
+  height: 60vh;
+  width: 75%;
   padding-left: 4em;
   padding-right: 4em;
   padding-bottom: 0;
@@ -59,6 +62,7 @@ const LogoBar = styled.div`
     height: 4em;
   }
 `;
+
 const styles = {
   button: {
     color: "#ffffff",
