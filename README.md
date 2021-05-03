@@ -6,7 +6,7 @@
 </h1>
 
 <div align="center">
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f6fd7c6c-7a75-45fd-887a-3f95d3
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6fd7c6c-7a75-45fd-887a-3f95d3)
 </div>
 <p>
 According to the National Institute of Health, over 50,000 people are diagnosed with Parkinson’s each year. Parkinson’s is the fastest-growing neurological disability with symptoms worsening by aging. There is currently no end-to-end pipeline which enables simple, at-home Parkinson’s evaluation. This evaluation involves both diagnosing potential symptoms, and symptom tracking. 
