@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 const AboutDiv = styled.div`
-  padding: 0;
-  margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: #003972;
@@ -27,7 +24,7 @@ const TextDiv = styled.div`
 const VideoDiv = styled.div`
   padding-left: 4em;
   padding-right: 4em;
-  padding-bottom: 0;
+  padding-bottom: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +38,7 @@ const About = () => {
             <p>Watch this video for information on how to complete the study tasks.</p>
         </TextDiv>
         <VideoDiv>
-        <video id="video1" style={{height:"100%", width: "100%"}} controls="controls">
+        <video id="video1" style={{width: "75%"}} controls="controls">
             <source
               src={`instructionVideos/Task0.mp4`}
               type="video/mp4"
