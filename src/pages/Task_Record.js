@@ -80,7 +80,7 @@ export class Task_Record extends Component {
   async componentDidMount() {
     const stream = await navigator.mediaDevices.getUserMedia({
       video: true,
-      audio: true,
+      audio: false,
     });
     // show it to user
     this.setState(stream);
