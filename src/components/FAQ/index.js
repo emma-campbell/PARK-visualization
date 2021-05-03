@@ -71,7 +71,7 @@ const FAQ = () => {
                 to an instruction page and then to the first task page. There,
                 you will be asked for permission to record your audio and video
                 through your webcam. Please select "Allow" so that both your
-                audio and video can be recorded.{" "}
+                audio and video can be recorded.
               </p>
             </AccordionDetails>
           </Accordion>
@@ -92,7 +92,7 @@ const FAQ = () => {
               <p>Where is the consent form?</p>
             </AccordionSummary>
             <AccordionDetails>
-              <p>You can find it by clicking HERE!</p>
+              <p>You can find it by clicking <a href="https://parktest.net/img/EConsent_v7_June6th_2019.pdf">HERE</a>!</p>
             </AccordionDetails>
           </Accordion>
           <Accordion>
