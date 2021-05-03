@@ -7,7 +7,6 @@ import RightArrow from "../../NewClient/SubScore/RightArrow";
 
 const SubScoreDiv = styled.div`
   padding: 1em;
-  width: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,

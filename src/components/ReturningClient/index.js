@@ -56,9 +56,11 @@ const SideBar = styled.div`
 `;
 
 const ReturningClients = () => {
+  
   const [motorModalShow, setMotorModalShow] = React.useState(false);
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
+
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
