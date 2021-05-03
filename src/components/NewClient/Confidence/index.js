@@ -25,7 +25,7 @@ const ConfidenceDiv = styled.div`
     font-size: 1.75em;
   }
 
-  @media only screen and (min-width: 1030px) and (max-width: 1366px) {
+  @media only screen and (min-width: 500px) and (max-width: 1366px) {
     & h1 {
       font-size: 2em;
     }
@@ -43,13 +43,6 @@ const FeedbackText = styled.div`
   & p {
     color: #9a9a9a;
     font-size: 1.5em;
-  }
-
-  @media only screen and (min-width: 1030px) and (max-width: 1366px) {
-    & p {
-      margin: 0;
-      font-size: 2em;
-    }
   }
 `;
 
