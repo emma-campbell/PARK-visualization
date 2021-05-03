@@ -9,7 +9,7 @@ import FeedbackLayout from "../components/FeedbackLayout";
 import PARK from "../images/PARK.png";
 
 const TaskDescriptionDiv = styled.div`
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
