@@ -223,7 +223,7 @@ const NewClient = () => {
           </Scores>
           <Graph>
             <ResponsiveContainer width="95%" height="95%">
-              <ComposedChart width={730} height={250} data={populationData}>
+              <ComposedChart width={730} height={250} data={populationData} fontFamily={"Hind, sans-serif"}>
                 <XAxis dataKey="name" />
                 <CartesianGrid stroke="#f5f5f5" />
                 
@@ -249,7 +249,7 @@ export default NewClient;
 
 /*
 
-<BarChart fontFamily={"Hind, sans-serif"} data={data}>
+<BarChart  data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
