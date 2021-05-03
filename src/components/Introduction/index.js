@@ -7,7 +7,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import PARK from "../../images/PARK.png";
 
 const IntroductionDiv = styled.div`
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;

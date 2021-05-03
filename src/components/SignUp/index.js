@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import React, {useContext} from 'react';
-import AppContext from '../../components/AppContext';
+import React, { useContext } from "react";
+import AppContext from "../../components/AppContext";
 
 const SignUpDiv = styled.div`
   display: flex;
@@ -84,33 +84,32 @@ const CardContent = styled.div`
   }
 
   & button:hover {
-    background-color: #002D5A;
+    background-color: #002d5a;
   }
 `;
 
 const Divider = styled.div`
   border-left: 2px solid #000000;
   height: 80%;
-`
+`;
 
 const SignUp = () => {
+  const { isPatient, setIsPatient } = useContext(AppContext);
 
-  const {isPatient, setIsPatient} = useContext(AppContext);
-
-  let history = useHistory(); 
+  let history = useHistory();
 
   return (
     <SignUpDiv>
       <TextDiv>
-        <h1>Sign In</h1>
+        <h1>Sign Up</h1>
       </TextDiv>
       <Content>
         <Card>
           <CardContent>
             <h2>Patients</h2>
             <svg
-              width="225"
-              height="217"
+              width="25%"
+              height="25%"
               viewBox="0 0 225 217"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -125,14 +124,22 @@ const SignUp = () => {
               />
             </svg>
             <p>Track your diagnostic data over time.</p>
-            <button onClick={() => {setIsPatient(true); console.log(isPatient); history.push('/log-in');}}><p>I am a Patient</p></button>
+            <button
+              onClick={() => {
+                setIsPatient(true);
+                console.log(isPatient);
+                history.push("/log-in");
+              }}
+            >
+              <p>I am a Patient</p>
+            </button>
           </CardContent>
-          <Divider/>
+          <Divider />
           <CardContent>
             <h2>Providers</h2>
             <svg
-              width="220"
-              height="220"
+              width="25%"
+              height="25%"
               viewBox="0 0 220 220"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +150,15 @@ const SignUp = () => {
               />
             </svg>
             <p>Keep track of patients over time.</p>
-            <button onClick={() => {setIsPatient(false); console.log(isPatient); history.push('/log-in');}}><p>I am a Provider</p></button>
+            <button
+              onClick={() => {
+                setIsPatient(false);
+                console.log(isPatient);
+                history.push("/log-in");
+              }}
+            >
+              <p>I am a Provider</p>
+            </button>
           </CardContent>
         </Card>
       </Content>
