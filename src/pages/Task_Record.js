@@ -10,10 +10,10 @@ import PARK from "../images/PARK.png";
 const videoType = "video/webm";
 
 const TaskRecordDiv = styled.div`
-  height: 75vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   & p {
     font-size: 2em;
     margin-top: 0;
@@ -22,7 +22,6 @@ const TaskRecordDiv = styled.div`
 `;
 
 const VideoDiv = styled.div`
-  height: 60vh;
   padding-left: 4em;
   padding-right: 4em;
   padding-bottom: 0;
