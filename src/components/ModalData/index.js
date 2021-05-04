@@ -14,7 +14,9 @@ const ModalDiv = styled.div`
   background-color: white;
   width: 50%;
   height: 75%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   & h2 {
     margin: 0;
     padding: 0;
@@ -27,6 +29,11 @@ const ModalDiv = styled.div`
   }
 `;
 
+const SymptomDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const ProgressDiv = styled.div`
   display: flex;
   justify-content: space-between;
@@ -36,8 +43,15 @@ const ProgressDiv = styled.div`
 const PercentDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  & h1 {
+    margin: 0;
+  }
+  & p {
+    margin: 0;
+    font-size: 12px;
+  }
 `;
 
 const Disclaimer = styled.div`
@@ -55,45 +69,67 @@ const Disclaimer = styled.div`
 const ModalData = ({ categories, descriptions, scores }) => {
   return (
     <ModalDiv>
-      <h2>{categories[0]}</h2>
-      <p>{descriptions[0]}</p>
-      <ProgressDiv>
-        <PercentDiv>
-        <h1>{100-parseInt(scores[0])}%</h1>
-        <p style={{marginBottom: "2em"}}>symptomatic</p>
-        </PercentDiv>
-        <BidirectionalProgressBar width="75" completed={scores[0] > 100 - scores[0] ? scores[0] : 100-scores[0]} direction={ 100 - scores[0] > scores[0]}/>
-        <PercentDiv>
-        <h1>{scores[0]}%</h1>
-        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
-        </PercentDiv>
-      </ProgressDiv>
-      <h2>{categories[1]}</h2>
-      <p>{descriptions[1]}</p>
-      <ProgressDiv>
-      <PercentDiv>
-        <h1>{100-parseInt(scores[1])}%</h1>
-        <p style={{marginBottom: "2em"}}>symptomatic</p>
-        </PercentDiv>
-        <BidirectionalProgressBar width="75" completed={scores[1] > 100 - scores[1] ? scores[1] : 100-scores[1]} direction={ 100 - scores[1] > scores[1]}/>
-        <PercentDiv>
-        <h1>{scores[1]}%</h1>
-        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
-        </PercentDiv>
-      </ProgressDiv>
-      <h2>{categories[2]}</h2>
-      <p>{descriptions[2]}</p>
-      <ProgressDiv>
-      <PercentDiv>
-        <h1>{100-parseInt(scores[2])}%</h1>
-        <p style={{marginBottom: "2em"}}>symptomatic</p>
-        </PercentDiv>
-        <BidirectionalProgressBar width="75" completed={scores[2] > 100 - scores[2] ? scores[2] : 100-scores[2]} direction={ 100 - scores[2] > scores[2]} />
-        <PercentDiv>
-        <h1>{scores[2]}%</h1>
-        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
-        </PercentDiv>
-      </ProgressDiv>
+      <SymptomDiv>
+        <h2>{categories[0]}</h2>
+        <p>{descriptions[0]}</p>
+        <ProgressDiv>
+          <PercentDiv>
+            <h1>{100 - parseInt(scores[0])}%</h1>
+            <p>symptomatic</p>
+          </PercentDiv>
+          <BidirectionalProgressBar
+            width="75"
+            completed={
+              scores[0] > 100 - scores[0] ? scores[0] : 100 - scores[0]
+            }
+            direction={100 - scores[0] > scores[0]}
+          />
+          <PercentDiv>
+            <h1>{scores[0]}%</h1>
+            <p>non-symptomatic</p>
+          </PercentDiv>
+        </ProgressDiv>
+      </SymptomDiv>
+      <SymptomDiv>
+        <h2>{categories[1]}</h2>
+        <p>{descriptions[1]}</p>
+        <ProgressDiv>
+          <PercentDiv>
+            <h1>{100 - parseInt(scores[1])}%</h1>
+            <p>symptomatic</p>
+          </PercentDiv>
+          <BidirectionalProgressBar
+            width="75"
+            completed={
+              scores[1] > 100 - scores[1] ? scores[1] : 100 - scores[1]
+            }
+            direction={100 - scores[1] > scores[1]}
+          />
+          <PercentDiv>
+            <h1>{scores[1]}%</h1>
+            <p>non-symptomatic</p>
+          </PercentDiv>
+        </ProgressDiv>
+      </SymptomDiv>
+      <SymptomDiv>
+        <h2>{categories[2]}</h2>
+        <p>{descriptions[2]}</p>
+        <ProgressDiv>
+          <PercentDiv>
+            <h1>{100 - parseInt(scores[2])}%</h1>
+            <p>symptomatic</p>
+          </PercentDiv>
+          <BidirectionalProgressBar
+            width="75"
+            completed={scores[2] > 100 - scores[2] ? scores[2] : 100 - scores[2]}
+            direction={100 - scores[2] > scores[2]}
+          />
+          <PercentDiv>
+            <h1>{scores[2]}%</h1>
+            <p>non-symptomatic</p>
+          </PercentDiv>
+        </ProgressDiv>
+      </SymptomDiv>
       <Disclaimer>
         <p>
           The symptoms measured above are meant to be analyzed by a medical
