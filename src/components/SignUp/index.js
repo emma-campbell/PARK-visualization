@@ -102,7 +102,7 @@ const Divider = styled.div`
 
 const HorizontalDivider = styled.div`
   border-top: 2px solid #000000;
-  width: 80%;
+  width: 90%;
 `;
 
 const CenteredButtonDiv = styled.div`

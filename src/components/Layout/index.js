@@ -4,7 +4,7 @@ import NavBar from "../Navbar";
 import Footer from "../Footer";
 
 
-const BodyWrapper = styled.body`
+const BodyWrapper = styled.div`
     height: 110vh;
 `
 
