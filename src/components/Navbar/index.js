@@ -49,7 +49,7 @@ const NavBar = () => {
                     <h3>FAQ</h3>
                 </NavLink>
                 <NavLink to="/sign-up">
-                    <h3>SIGN UP</h3>
+                    <h3>SIGN IN</h3>
                 </NavLink>
                 <NavLink to="/log-in">
                     <h3>LOG IN</h3>

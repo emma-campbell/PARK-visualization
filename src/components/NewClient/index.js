@@ -5,14 +5,12 @@ import styled from "styled-components";
 
 // RECHART
 import {
-  CartesianGrid,
   XAxis,
-  Cell,
-  Bar,
   ResponsiveContainer,
-  ComposedChart,
-  Area,
-  Line
+  AreaChart,
+  ReferenceLine,
+  Label,
+  Area
 } from "recharts";
 
 // LOGO
@@ -79,9 +77,10 @@ const Scores = styled.div`
 
 const Graph = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 43vh;
+  height: 50vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 `;
@@ -91,64 +90,37 @@ const NewClient = () => {
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
 
-  const populationData = [
+
+  const populationDistribution = [
     {
-      "name": "13th Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 4000,
-      "pv": 2400,
-      "amt": 2400
+      uv: 0,
+      pv: 15,
     },
     {
-      "name": "23rd Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 3000,
-      "pv": 4800,
-      "amt": 2210
+      uv: 20,
+      pv: 40,
     },
     {
-      "name": "37th Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 2000,
-      "pv": 7200,
-      "amt": 2290
+      uv: 30,
+      pv: 60,
     },
     {
-      "name": "50th Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 2780,
-      "pv": 12000,
-      "amt": 2000
+      uv: 50,
+      pv: 30,
     },
     {
-      "name": "63rd Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 1890,
-      "pv": 7000,
-      "amt": 2181
+      uv: 60,
+      pv: 25,
     },
     {
-      "name": "76th Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 2390,
-      "pv": 3800,
-      "amt": 2500
+      uv: 80,
+      pv: 20,
     },
     {
-      "name": "90th+ Percentile",
-      "here": "you are here",
-      "not_here": "",
-      "uv": 3490,
-      "pv": 1300,
-      "amt": 2100
-    }
-  ]
+      uv: 100,
+      pv: 10,
+    },
+  ];
 
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
@@ -225,20 +197,16 @@ const NewClient = () => {
             />
           </Scores>
           <Graph>
-            <ResponsiveContainer width="95%" height="95%">
-              <ComposedChart width={730} height={250} data={populationData} fontFamily={"Hind, sans-serif"}>
-                <XAxis dataKey="name" />
-                <CartesianGrid stroke="#f5f5f5" />
-                
-                <Area type="monotone" dataKey="pv" fill="#C0BBBA" stroke="#8884d8" />
-                <Bar dataKey="pv" barSize={20} fill="#003972">
-                { populationData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index === 2 ? "#0072F0" : "#003972"} />
-                    ))
-                }
-                </Bar>
-                <Line type="monotone" dataKey="pv" stroke="#0072F0" />
-              </ComposedChart>
+            <h2 style={{marginRight: "auto", marginLeft: "1em", marginBottom: "-0.5em"}}>Comparison | Overall Population</h2>
+            <p style={{marginRight: "auto", marginLeft: "2em", fontStyle: "italic", fontWeight: "100"}}>PARK Score in Context</p>
+            <ResponsiveContainer width="95%" height="100%">
+            <AreaChart data={populationDistribution}   margin={{ top: 15, right: 30, left: 20, bottom: 10 }}>
+        <Area type="monotone" dataKey="pv" fill="#003972"/>
+        <ReferenceLine x={20} stroke="black">
+            <Label value="You" position="insideTopRight"/>
+        </ReferenceLine>
+        <XAxis type="number" dataKey="uv" />
+    </AreaChart>
             </ResponsiveContainer>
           </Graph>
         </Data>

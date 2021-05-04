@@ -158,20 +158,20 @@ const LogIn = () => {
           <CardContent>
             <form action="#">
               <Field>
-                <label class="form-label">
+                <label className="form-label">
                   <p>Email</p>
                 </label>
-                <input type="text" class="form-control" placeholder="email@email.com"/>
+                <input type="text" className="form-control" placeholder="email@email.com"/>
               </Field>
               <Field>
-                <label class="form-label">
+                <label className="form-label">
                   <p>Password</p>
                 </label>
-                <input type="password" class="form-control" placeholder="••••••••••"/>
+                <input type="password" className="form-control" placeholder="••••••••••"/>
               </Field>
               <CheckBoxField>
-                <input type="checkbox" class="form-check-input" />
-                <label class="form-label"><p>Remember Me</p></label>
+                <input type="checkbox" className="form-check-input" />
+                <label className="form-label"><p>Remember Me</p></label>
               </CheckBoxField>
               <button onClick={() => {history.push(isPatient ? "/feedback/returning-client" : "/clinicians")}}><p>Log In</p></button>
             </form>

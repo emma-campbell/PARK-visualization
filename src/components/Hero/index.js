@@ -63,7 +63,7 @@ const Hero = () => {
       <TitleDiv>
         <h1>PARKTest.net</h1>
         <h2>On-Demand Parkinson's Evaluation</h2>
-        <button onClick={() => {history.push('/sign-up')}}><p>GET STARTED</p></button>
+        <button onClick={() => {history.push('/startStudy')}}><p>GET STARTED</p></button>
       </TitleDiv>
     </HeroDiv>
   );
