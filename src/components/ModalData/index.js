@@ -33,6 +33,13 @@ const ProgressDiv = styled.div`
   align-items: center;
 `;
 
+const PercentDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
+
 const Disclaimer = styled.div`
   display: flex;
   text-align: center;
@@ -51,23 +58,41 @@ const ModalData = ({ categories, descriptions, scores }) => {
       <h2>{categories[0]}</h2>
       <p>{descriptions[0]}</p>
       <ProgressDiv>
+        <PercentDiv>
         <h1>{100-parseInt(scores[0])}%</h1>
+        <p style={{marginBottom: "2em"}}>symptomatic</p>
+        </PercentDiv>
         <BidirectionalProgressBar width="75" completed={scores[0] > 100 - scores[0] ? scores[0] : 100-scores[0]} direction={ 100 - scores[0] > scores[0]}/>
+        <PercentDiv>
         <h1>{scores[0]}%</h1>
+        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
+        </PercentDiv>
       </ProgressDiv>
       <h2>{categories[1]}</h2>
       <p>{descriptions[1]}</p>
       <ProgressDiv>
+      <PercentDiv>
         <h1>{100-parseInt(scores[1])}%</h1>
+        <p style={{marginBottom: "2em"}}>symptomatic</p>
+        </PercentDiv>
         <BidirectionalProgressBar width="75" completed={scores[1] > 100 - scores[1] ? scores[1] : 100-scores[1]} direction={ 100 - scores[1] > scores[1]}/>
+        <PercentDiv>
         <h1>{scores[1]}%</h1>
+        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
+        </PercentDiv>
       </ProgressDiv>
       <h2>{categories[2]}</h2>
       <p>{descriptions[2]}</p>
       <ProgressDiv>
+      <PercentDiv>
         <h1>{100-parseInt(scores[2])}%</h1>
+        <p style={{marginBottom: "2em"}}>symptomatic</p>
+        </PercentDiv>
         <BidirectionalProgressBar width="75" completed={scores[2] > 100 - scores[2] ? scores[2] : 100-scores[2]} direction={ 100 - scores[2] > scores[2]} />
+        <PercentDiv>
         <h1>{scores[2]}%</h1>
+        <p style={{marginBottom: "2em"}}>non-symptomatic</p>
+        </PercentDiv>
       </ProgressDiv>
       <Disclaimer>
         <p>

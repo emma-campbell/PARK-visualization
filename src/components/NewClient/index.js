@@ -153,7 +153,10 @@ const NewClient = () => {
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
-  const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
+  const speech_descriptions = ["Aggregate of complex features related to vocal jitter", "Aggregate of complex features related to vocal shimmer", "Aggregate of complex features related to vocal pitch"];
+  const motor_descriptions = ["Aggregate of complex features related to facial muscle rigidity", "Aggregate of complex features related to facial muscle stiffness", "Aggregate of complex features related to facial reaction time"];
+  const face_descriptions = ["Aggregate of complex features related to muscular tremor", "Aggregate of complex features related to muscular stiffness", "Aggregate of complex features related to muscular balance"];
+
 
   const generate_random_score = () => {
     const x = Math.floor(Math.random() * 100);
@@ -178,7 +181,7 @@ const NewClient = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(motor_categories, descriptions, generate_random_score())}
+        {body(motor_categories, motor_descriptions, generate_random_score())}
       </Modal>
 
       <Modal
@@ -187,7 +190,7 @@ const NewClient = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(face_categories, descriptions, generate_random_score())}
+        {body(face_categories, face_descriptions, generate_random_score())}
       </Modal>
 
       <Modal
@@ -196,7 +199,7 @@ const NewClient = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(speech_categories, descriptions, generate_random_score())}
+        {body(speech_categories, speech_descriptions, generate_random_score())}
       </Modal>
 
       <LogoBar>

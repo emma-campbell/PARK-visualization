@@ -74,7 +74,9 @@ const ReturningClients = () => {
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
-  const descriptions = ["lorem ipsum", "lorem ipsum", "lorem ipsum"];
+  const speech_descriptions = ["Aggregate of complex features related to vocal jitter", "Aggregate of complex features related to vocal shimmer", "Aggregate of complex features related to vocal pitch"];
+  const motor_descriptions = ["Aggregate of complex features related to facial muscle rigidity", "Aggregate of complex features related to facial muscle stiffness", "Aggregate of complex features related to facial reaction time"];
+  const face_descriptions = ["Aggregate of complex features related to muscular tremor", "Aggregate of complex features related to muscular stiffness", "Aggregate of complex features related to muscular balance"];
 
   const generate_random_score = () => {
     const x = Math.floor(Math.random() * 100);
@@ -99,7 +101,7 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {isPatient? body(motor_categories, descriptions, generate_random_score()) : <ModalImage img={MotorShap}/>}
+        {isPatient? body(motor_categories, motor_descriptions, generate_random_score()) : <ModalImage img={MotorShap}/>}
       </Modal>
 
       <Modal
@@ -108,7 +110,7 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {isPatient? body(face_categories, descriptions, generate_random_score()) : <ModalImage img={FaceShap}/>}
+        {isPatient? body(face_categories, face_descriptions, generate_random_score()) : <ModalImage img={FaceShap}/>}
       </Modal>
 
       <Modal
@@ -117,14 +119,14 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {isPatient? body(speech_categories, descriptions, generate_random_score()) : <ModalImage img={SpeechShap}/>}
+        {isPatient? body(speech_categories, speech_descriptions, generate_random_score()) : <ModalImage img={SpeechShap}/>}
       </Modal>
 
       <LogoBar>
         <Link to="/">
           <img src={PARK} alt="PARK" />
         </Link>
-        <h1>Your results are in...</h1>
+        <h1>{isPatient ? "Your results are in..." : "Patient's Test Results"}</h1>
       </LogoBar>
       <Content>
         <SideBar>
@@ -136,6 +138,7 @@ const ReturningClients = () => {
             setMotorShow={setMotorModalShow}
             setSpeechShow={setSpeechModalShow}
             setFaceShow={setFaceModalShow}
+            isPatient={isPatient}
           />
         </SideBar>
         <Graph />

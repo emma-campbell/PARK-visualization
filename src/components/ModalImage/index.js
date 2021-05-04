@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 const ModalDiv = styled.div`
+  display: flex;
   border-radius: 9px;
   margin-top: 5%;
   margin-left: 20%;
@@ -28,17 +29,6 @@ const ModalDiv = styled.div`
   }
 `;
 
-const Disclaimer = styled.div`
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-
-  & p {
-    padding-top: 1em;
-    color: #c4c4c4;
-  }
-`;
 
 const ModalImage = (props) => {
 
@@ -47,13 +37,6 @@ const ModalImage = (props) => {
   return (
     <ModalDiv>
       <img src={props.img} alt="PARKTest" width="60%" height="auto"/>
-      <Disclaimer>
-        <p>
-          The symptoms measured above are meant to be analyzed by a medical
-          professional. If you have questions or concerns, please contact a
-          neurologist.
-        </p>
-      </Disclaimer>
     </ModalDiv>
   );
 };

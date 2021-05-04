@@ -24,7 +24,7 @@ const TaskRecordDiv = styled.div`
 const VideoDiv = styled.div`
   padding-left: 4em;
   padding-right: 4em;
-  padding-bottom: 0;
+  padding-bottom: 4em;
   display: flex;
   justify-content: center;
   align-items: center;

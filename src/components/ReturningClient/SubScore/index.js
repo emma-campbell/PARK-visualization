@@ -81,6 +81,7 @@ const SubScore = ({
   setMotorShow,
   setFaceShow,
   setSpeechShow,
+  isPatient
 }) => {
   const [category, setCategory] = useState("MOTOR");
   const [task, setTask] = useState("4");
@@ -173,7 +174,7 @@ const SubScore = ({
               }
             }}
           >
-            <p>EXPLAIN MY SCORE</p>
+            <p>{isPatient ? "EXPLAIN MY SCORE" : "MORE INFO"}</p>
           </button>
         </RightAlignedButtonDiv>
       </ScoreAndBar>
