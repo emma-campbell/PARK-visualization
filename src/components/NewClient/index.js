@@ -10,7 +10,7 @@ import {
   AreaChart,
   ReferenceLine,
   Label,
-  Area
+  Area,
 } from "recharts";
 
 // LOGO
@@ -90,7 +90,6 @@ const NewClient = () => {
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
 
-
   const populationDistribution = [
     {
       uv: 0,
@@ -125,10 +124,21 @@ const NewClient = () => {
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
-  const speech_descriptions = ["Aggregate of complex features related to vocal jitter", "Aggregate of complex features related to vocal shimmer", "Aggregate of complex features related to vocal pitch"];
-  const face_descriptions = ["Aggregate of complex features related to facial muscle rigidity", "Aggregate of complex features related to facial muscle stiffness", "Aggregate of complex features related to facial reaction time"];
-  const motor_descriptions = ["Aggregate of complex features related to muscular tremor", "Aggregate of complex features related to muscular stiffness", "Aggregate of complex features related to muscular balance"];
-
+  const speech_descriptions = [
+    "Aggregate of complex features related to vocal jitter",
+    "Aggregate of complex features related to vocal shimmer",
+    "Aggregate of complex features related to vocal pitch",
+  ];
+  const face_descriptions = [
+    "Aggregate of complex features related to facial muscle rigidity",
+    "Aggregate of complex features related to facial muscle stiffness",
+    "Aggregate of complex features related to facial reaction time",
+  ];
+  const motor_descriptions = [
+    "Aggregate of complex features related to muscular tremor",
+    "Aggregate of complex features related to muscular stiffness",
+    "Aggregate of complex features related to muscular balance",
+  ];
 
   const generate_random_score = () => {
     const x = Math.floor(Math.random() * 100);
@@ -197,16 +207,36 @@ const NewClient = () => {
             />
           </Scores>
           <Graph>
-            <h2 style={{marginRight: "auto", marginLeft: "1em", marginBottom: "-0.5em"}}>Comparison | Overall Population</h2>
-            <p style={{marginRight: "auto", marginLeft: "2em", fontStyle: "italic", fontWeight: "100"}}>PARK Score in Context</p>
+            <h2
+              style={{
+                marginRight: "auto",
+                marginLeft: "1em",
+                marginBottom: "-0.5em",
+              }}
+            >
+              Comparison | Overall Population
+            </h2>
+            <p
+              style={{
+                marginRight: "auto",
+                marginLeft: "2em",
+                fontStyle: "italic",
+                fontWeight: "100",
+              }}
+            >
+              PARK Score in Context
+            </p>
             <ResponsiveContainer width="95%" height="100%">
-            <AreaChart data={populationDistribution}   margin={{ top: 15, right: 30, left: 20, bottom: 10 }}>
-        <Area type="monotone" dataKey="pv" fill="#003972"/>
-        <ReferenceLine x={20} stroke="black">
-            <Label value="You" position="insideTopRight"/>
-        </ReferenceLine>
-        <XAxis type="number" dataKey="uv" />
-    </AreaChart>
+              <AreaChart
+                data={populationDistribution}
+                margin={{ top: 15, right: 30, left: 20, bottom: 10 }}
+              >
+                <Area type="monotone" dataKey="pv" fill="#003972" />
+                <ReferenceLine x={20} stroke="black">
+                  <Label value="You" position="insideTopRight" fontFamily="Hind, san-serif"/>
+                </ReferenceLine>
+                <XAxis type="number" dataKey="uv" fontFamily="Hind, san-serif"/>
+              </AreaChart>
             </ResponsiveContainer>
           </Graph>
         </Data>
@@ -216,7 +246,6 @@ const NewClient = () => {
 };
 
 export default NewClient;
-
 
 /*
 
