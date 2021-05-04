@@ -1,12 +1,20 @@
-import React from "react";
+import React, {useContext} from 'react';
 import { Link } from "react-router-dom";
+import AppContext from '../../components/AppContext';
+
 
 // STYLED COMPONENTS
 import styled from "styled-components";
 
+import SpeechShap from "../../images/speech_shap.png";
+import MotorShap from "../../images/motor_shap.png";
+import FaceShap from "../../images/face_shap.png";
+
+
 // MODAL
-import { Modal } from "@material-ui/core";
+import { Modal} from "@material-ui/core";
 import ModalData from "../ModalData";
+import ModalImage from "../ModalImage";
 
 // GRAPH
 import Graph from "../Graph";
@@ -60,6 +68,9 @@ const ReturningClients = () => {
   const [faceModalShow, setFaceModalShow] = React.useState(false);
   const [speechModalShow, setSpeechModalShow] = React.useState(false);
 
+  const { isPatient } = useContext(AppContext);
+
+
   const speech_categories = ["Jitter", "Shimmer", "Pitch"];
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
@@ -73,11 +84,11 @@ const ReturningClients = () => {
   };
 
   const body = (categories, descriptions, scores) => (
-    <ModalData
+      <ModalData
       categories={categories}
       descriptions={descriptions}
       scores={scores}
-    />
+    /> 
   );
 
   return (
@@ -88,7 +99,7 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(motor_categories, descriptions, generate_random_score())}
+        {isPatient? body(motor_categories, descriptions, generate_random_score()) : <ModalImage img={MotorShap}/>}
       </Modal>
 
       <Modal
@@ -97,7 +108,7 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(face_categories, descriptions, generate_random_score())}
+        {isPatient? body(face_categories, descriptions, generate_random_score()) : <ModalImage img={FaceShap}/>}
       </Modal>
 
       <Modal
@@ -106,7 +117,7 @@ const ReturningClients = () => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        {body(speech_categories, descriptions, generate_random_score())}
+        {isPatient? body(speech_categories, descriptions, generate_random_score()) : <ModalImage img={SpeechShap}/>}
       </Modal>
 
       <LogoBar>
@@ -120,11 +131,11 @@ const ReturningClients = () => {
           <Confidence score="1" confidence="78" />
           <SubScore
             faceScore="2"
-            speechScore="0"
+            speechScore="1"
             motorScore="1"
             setMotorShow={setMotorModalShow}
-            setSpeechShow={setMotorModalShow}
-            setFaceShow={setMotorModalShow}
+            setSpeechShow={setSpeechModalShow}
+            setFaceShow={setFaceModalShow}
           />
         </SideBar>
         <Graph />

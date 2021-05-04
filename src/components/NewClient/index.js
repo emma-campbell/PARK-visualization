@@ -207,7 +207,7 @@ const NewClient = () => {
       </LogoBar>
       <Content>
         <SideBar>
-          <Confidence score="4" confidence="78" />
+          <Confidence score="1" confidence="78" />
           <ShareResults />
         </SideBar>
         <Data>

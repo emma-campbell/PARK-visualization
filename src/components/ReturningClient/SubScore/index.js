@@ -151,7 +151,7 @@ const SubScore = ({
       <ScoreAndBar>
         <h2>SCORE | {score}</h2>
         <ProgressBar completed={percent} />
-      `  <RightAlignedButtonDiv>
+        <RightAlignedButtonDiv>
           <button
             onClick={() => {
               setMotorShow(false);
@@ -175,7 +175,7 @@ const SubScore = ({
           >
             <p>EXPLAIN MY SCORE</p>
           </button>
-        </RightAlignedButtonDiv>`
+        </RightAlignedButtonDiv>
       </ScoreAndBar>
       <ArrowDiv>
         <LeftArrow onClick={leftClick} />

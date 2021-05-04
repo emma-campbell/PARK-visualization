@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import React from "react";
+import { useHistory } from "react-router-dom";
+import React, {useContext} from "react";
 import moment from "moment";
 import { Button } from "@material-ui/core";
+import AppContext from '../../components/AppContext';
+
 
 import {
   LineChart,
@@ -218,13 +221,37 @@ const Graph = () => {
   const [speechShow, setSpeechShow] = React.useState(false);
   const [overallShow, setOverallShow] = React.useState(false);
 
+  const { isPatient } = useContext(AppContext);
+
+
+  let history = useHistory();
+
   return (
     <GraphContainer>
       <Content>
 
         <DateDiv>
-          <h1>{moment(new Date(test_time)).format("MMMM DD, YYYY")}</h1>
-        </DateDiv>
+          <h1>Lastest Test: {moment(new Date(test_time)).format("MMMM DD, YYYY")}</h1>
+
+          {isPatient ? <Button
+            variant="contained"
+            size="small"
+            style={{
+              marginLeft: "25%",
+              marginBottom: "0",
+              paddingTop: "0",
+              paddingBottom: "0",
+              backgroundColor: "#003972",
+              color: "white",
+              borderRadius: "22px",
+            }}
+            onClick={() => {
+              history.push("/startStudy");
+            }}
+          >
+            <p>Start New Test</p>
+          </Button> : null}        
+          </DateDiv>
         <ButtonDiv>
           <Button
             variant="contained"

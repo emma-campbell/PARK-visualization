@@ -94,7 +94,7 @@ const Divider = styled.div`
 `;
 
 const SignUp = () => {
-  const { isPatient, setIsPatient } = useContext(AppContext);
+  const { setIsPatient, setIsNew } = useContext(AppContext);
 
   let history = useHistory();
 
@@ -127,11 +127,20 @@ const SignUp = () => {
             <button
               onClick={() => {
                 setIsPatient(true);
-                console.log(isPatient);
+                setIsNew(false);
                 history.push("/log-in");
               }}
             >
               <p>I am a Patient</p>
+            </button>
+            <button
+              onClick={() => {
+                setIsPatient(true);
+                setIsNew(true);
+                history.push("/startStudy");
+              }}
+            >
+              <p>I am a New User</p>
             </button>
           </CardContent>
           <Divider />
@@ -153,7 +162,7 @@ const SignUp = () => {
             <button
               onClick={() => {
                 setIsPatient(false);
-                console.log(isPatient);
+                setIsNew(false);
                 history.push("/log-in");
               }}
             >

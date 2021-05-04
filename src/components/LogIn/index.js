@@ -173,7 +173,7 @@ const LogIn = () => {
                 <input type="checkbox" class="form-check-input" />
                 <label class="form-label"><p>Remember Me</p></label>
               </CheckBoxField>
-              <button onClick={() => {history.push(isPatient ? "/startStudy" : "/clinicians")}}><p>Log In</p></button>
+              <button onClick={() => {history.push(isPatient ? "/feedback/returning-client" : "/clinicians")}}><p>Log In</p></button>
             </form>
           </CardContent>
         </Card>

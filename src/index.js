@@ -30,8 +30,9 @@ import AppContext from "./components/AppContext";
 
 const App = () => {
   const [isPatient, setIsPatient] = useState(true);
+  const [isNew, setIsNew] = useState(false);
   const [videoNumber, setVideoNumber] = useState(1);
-  const value = { isPatient, setIsPatient, videoNumber, setVideoNumber};
+  const value = { isPatient, setIsPatient, videoNumber, setVideoNumber, isNew, setIsNew};
 
   return (
     <AppContext.Provider value={value}>
