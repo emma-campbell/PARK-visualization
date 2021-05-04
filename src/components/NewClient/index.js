@@ -154,8 +154,8 @@ const NewClient = () => {
   const face_categories = ["Rigidity", "Stiffness", "Slowness"];
   const motor_categories = ["Tremor", "Stiffness", "Balance"];
   const speech_descriptions = ["Aggregate of complex features related to vocal jitter", "Aggregate of complex features related to vocal shimmer", "Aggregate of complex features related to vocal pitch"];
-  const motor_descriptions = ["Aggregate of complex features related to facial muscle rigidity", "Aggregate of complex features related to facial muscle stiffness", "Aggregate of complex features related to facial reaction time"];
-  const face_descriptions = ["Aggregate of complex features related to muscular tremor", "Aggregate of complex features related to muscular stiffness", "Aggregate of complex features related to muscular balance"];
+  const face_descriptions = ["Aggregate of complex features related to facial muscle rigidity", "Aggregate of complex features related to facial muscle stiffness", "Aggregate of complex features related to facial reaction time"];
+  const motor_descriptions = ["Aggregate of complex features related to muscular tremor", "Aggregate of complex features related to muscular stiffness", "Aggregate of complex features related to muscular balance"];
 
 
   const generate_random_score = () => {
@@ -220,8 +220,8 @@ const NewClient = () => {
               speechScore="0"
               motorScore="1"
               setMotorShow={setMotorModalShow}
-              setSpeechShow={setMotorModalShow}
-              setFaceShow={setMotorModalShow}
+              setSpeechShow={setSpeechModalShow}
+              setFaceShow={setFaceModalShow}
             />
           </Scores>
           <Graph>
